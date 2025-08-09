@@ -1,43 +1,42 @@
 .hero {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* This makes the hero section exactly one browser height */
-    width: 100%;
-    background: white; /* Example background color */
-    color: #333; /* Example text color */
-  }
-  
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .hero button {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
-    background: #007bff; /* Example button color */
-    color: #fff; /* Example button text color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .hero button:hover {
-    background: #0056b3; /* Example button hover color */
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* This makes the hero section exactly one browser height */
+  width: 100%;
+  background: white; /* Example background color */
+  color: #333; /* Example text color */
+}
 
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  background: #007bff; /* Example button color */
+  color: #fff; /* Example button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero button:hover {
+  background: #0056b3; /* Example button hover color */
+}
 
 .bg {
   /* The image used */
-  background-image: url("/bg.png");
+  background-image: url("/bg2.png");
 
   /* Full height */
   height: 100vh;
@@ -50,7 +49,7 @@
   background-size: cover;
 }
 
-.floating {  
+.floating {
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -60,21 +59,30 @@
 }
 
 @keyframes floating {
-  0% { transform: translate(0,  0px); }
-  50%  { transform: translate(0, 15px); }
-  100%   { transform: translate(0, -0px); }    
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
 }
 
-
 .fly {
-animation-name: fly;
-animation-duration: 10s;
-animation-iteration-count: infinite;
+  animation-name: fly;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
 }
 
 @keyframes fly {
-	0% { transform: translate(-10vw,  0px); }
-  100%   { transform: translate(50vw, 0px); }  
+  0% {
+    transform: translate(-10vw, 0px);
+  }
+  100% {
+    transform: translate(50vw, 0px);
+  }
 }
 
 .rotate {
@@ -85,7 +93,75 @@ animation-iteration-count: infinite;
 }
 
 @keyframes rotate {
-  0% { transform: rotate(-10deg); }
- 50%   { transform: rotate(10deg); }  
- 100%   { transform: rotate(-10deg); }  
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* Starfield overlay for hero */
+.starfield {
+  position: relative;
+  overflow: hidden;
+}
+
+.starfield::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Multiple repeating layers of small radial gradients to simulate stars */
+  background: radial-gradient(
+        8px 8px at 20px 30px,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0) 45%
+      )
+      0 0/240px 240px repeat,
+    radial-gradient(
+        6px 6px at 100px 150px,
+        rgba(255, 255, 255, 0.85),
+        rgba(255, 255, 255, 0) 45%
+      )
+      0 0/300px 300px repeat,
+    radial-gradient(
+        4px 4px at 130px 80px,
+        rgba(255, 255, 255, 0.75),
+        rgba(255, 255, 255, 0) 45%
+      )
+      0 0/220px 220px repeat,
+    radial-gradient(
+        4px 4px at 60px 120px,
+        rgba(255, 255, 255, 0.65),
+        rgba(255, 255, 255, 0) 45%
+      )
+      0 0/280px 280px repeat,
+    radial-gradient(
+        12px 12px at 160px 40px,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0) 40%
+      )
+      0 0/350px 350px repeat;
+  animation: twinkle 8s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+/* Ensure content sits above the star overlay */
+.starfield > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.85;
+  }
 }
