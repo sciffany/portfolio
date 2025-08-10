@@ -1,29 +1,8 @@
 import "./page.css";
 import Image from "next/image";
-import {
-  Merriweather,
-  Playfair_Display,
-  Poppins,
-  Quicksand,
-} from "next/font/google";
+import { Poppins } from "next/font/google";
 import { description, writeup } from "./lib/data";
-import { lato } from "./layout";
 import ReactMarkdown from "react-markdown";
-
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  weight: ["300", "400", "700", "900"],
-});
-
-const playfair_display = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["700", "900"],
-});
 
 const poppins = Poppins({
   subsets: ["latin"],
