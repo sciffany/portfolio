@@ -5,14 +5,31 @@ import { wp } from "@/app/lib/wp";
 import Breadcrumb from "../../components/breadcrumb";
 import { getCategory } from "@/app/lib/utils";
 
+// Generate static params for all design slugs
+export async function generateStaticParams() {
+  return wp.rss.channel.item
+    .filter((design) => design.link.includes("/portfolio/"))
+    .map((design) => {
+      // Handle both /portfolio/slug/ and /portfolio/number/ formats
+      const urlParts = design.link.split("/");
+      const slug =
+        urlParts[urlParts.length - 2] || urlParts[urlParts.length - 1];
+      return {
+        slug: slug,
+      };
+    });
+}
+
 export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const design = wp.rss.channel.item.find(
-    (d) => d.link.split("/").slice(-2)[0] === params.slug
-  );
+  const design = wp.rss.channel.item.find((d) => {
+    const urlParts = d.link.split("/");
+    const slug = urlParts[urlParts.length - 2] || urlParts[urlParts.length - 1];
+    return slug === params.slug;
+  });
 
   return {
     title: `${design?.title || "Design"} | Tiffany Sia Chong`,
@@ -29,9 +46,11 @@ export async function generateMetadata({
 }
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
-  const design = wp.rss.channel.item.find(
-    (d) => d.link.split("/").slice(-2)[0] === params.slug
-  );
+  const design = wp.rss.channel.item.find((d) => {
+    const urlParts = d.link.split("/");
+    const slug = urlParts[urlParts.length - 2] || urlParts[urlParts.length - 1];
+    return slug === params.slug;
+  });
 
   const content = design?.["content:encoded"].replaceAll(
     "https://sciffany.wordpress.com/wp-content/uploads/",

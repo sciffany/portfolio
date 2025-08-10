@@ -4,6 +4,15 @@ import { projects } from "../../lib/data";
 import Image from "next/image";
 import "../../page.css";
 
+// Generate static params for all project slugs
+export async function generateStaticParams() {
+  return projects.map((project) => {
+    return {
+      slug: project.slug,
+    };
+  });
+}
+
 export async function generateMetadata({
   params,
 }: {
