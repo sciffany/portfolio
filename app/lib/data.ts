@@ -18,9 +18,9 @@ Contact Me
 I am always up to work on projects that will impact the community, and am always up for a challenge. Get in touch at hello@sciffany.com`;
 
 export const description = `
-- Loves making [apps](/projects) and [artworks](/design)
+- Loves making [apps](/projects), [artworks](/design) and people smile
 - Pescatarian, [cruciverbalist](https://crosshare.org/crosswords/vfN5qIXXAUb6rluYdGPH/break-a-leg) and [ornithophile](https://www.youtube.com/shorts/u-1EousPvG8)
-- Always up to work on impactful and challenging projects
+- Excited to work on impactful projects and go the extra mile
 - Get in touch at [hello@sciffany.com](mailto:hello@sciffany.com)
 `;
 
@@ -144,89 +144,89 @@ export const DESIGN_CATEGORIES: readonly DesignCategory[] = [
 
 export const designs = [
   {
-    title: "Design 1",
-    description: "Description 1",
+    title: "Tran(scent)dence",
     image: "1.png",
-    link: "https://www.google.com",
+    slug: "transcentdence",
   },
   {
-    title: "Design 2",
-    description: "Description 2",
+    title: "Young Students' Recital",
     image: "fin1.png",
-    link: "https://www.google.com",
+    slug: "young-students-recital",
   },
   {
     title: "Design 3",
     description: "Description 3",
     image: "newsad_large.png",
-    link: "https://www.google.com",
   },
   {
     title: "Design 4",
     description: "Description 4",
     image: "hope.jpeg",
-    link: "https://www.google.com",
   },
   {
     title: "Design 5",
     description: "Description 5",
     image: "3.png",
-    link: "https://www.google.com",
   },
   {
     title: "Design 6",
     description: "Description 6",
     image: "5.png",
-    link: "https://www.google.com",
   },
   {
     title: "Design 7",
     description: "Description 7",
     image: "7.png",
-    link: "https://www.google.com",
   },
   {
     title: "Design 8",
     description: "Description 8",
     image: "tess.png",
-    link: "https://www.google.com",
   },
   {
     title: "Design 9",
     description: "Description 9",
     image: "chopin-1-1.png",
-    link: "https://www.google.com",
   },
   {
     title: "Design 10",
     description: "Description 10",
     image: "bipc.png",
-    link: "https://www.google.com",
   },
   {
     title: "Design 11",
     description: "Description 11",
     image: "shine.jpeg",
-    link: "https://www.google.com",
   },
   {
     title: "Design 12",
     description: "Description 12",
     image: "2.png",
-    link: "https://www.google.com",
   },
   {
     title: "Design 13",
     description: "Description 13",
     image: "4.png",
-    link: "https://www.google.com",
   },
   {
     title: "Design 14",
     description: "Description 14",
     image: "6.png",
-    link: "https://www.google.com",
   },
+];
+
+export enum ProjectCategory {
+  Games = "Games",
+  Utilities = "Utilities",
+  SchoolProjects = "School Projects",
+  NonTech = "Non-Tech",
+}
+
+export const PROJECT_CATEGORIES: readonly ProjectCategory[] = [
+  ProjectCategory.Games,
+  ProjectCategory.Utilities,
+  ProjectCategory.SchoolProjects,
+  ProjectCategory.NonTech,
 ];
 
 export const projects = [
@@ -236,15 +236,24 @@ export const projects = [
     description: "Learn Tagalog and Korean",
     tech: ["Nextjs", "TypeScript"],
     link: "https://lingosaurus.vercel.app/",
-    category: "Games",
+    category: ProjectCategory.Utilities,
+    image: "/lingosaurus.png",
+    slug: "lingosaurus",
+    longDescription:
+      "Lingosaurus is an incremental and immersive language learning app that allows you to learn Tagalog and Korean.",
+    why: "I made this to supplement my Korean language learning and to share Tagalog language with my friends.",
+    different:
+      "This app generates many sentences for each sentence structure, allowing you to learn through audio repetition. It introduces new vocabulary for each sentence structure.",
   },
   {
     emoji: "😎",
     title: "samevibes",
-    description: "Find similarities with friends",
+    description: "Game of friendly similarities",
     tech: ["Nextjs", "TypeScript"],
     link: "https://samevibes.vercel.app/",
-    category: "Games",
+    category: ProjectCategory.Games,
+    image: "/samevibes2.png",
+    slug: "samevibes",
   },
   {
     emoji: "🧶",
@@ -252,7 +261,9 @@ export const projects = [
     description: "Count crochet stitches",
     tech: ["React Native"],
     link: "https://play.google.com/store/apps/details?id=com.sciffany.AmigurumiCounter",
-    category: "Utilities",
+    category: ProjectCategory.Utilities,
+    image: "/amigurumi2.png",
+    slug: "amigurumi-counter",
   },
   {
     emoji: "🌿",
@@ -260,7 +271,9 @@ export const projects = [
     description: "Farming RPG",
     tech: ["Phaser", "React"],
     link: "https://sparkynature.vercel.app/game",
-    category: "Games",
+    category: ProjectCategory.Games,
+    image: "/demo.png",
+    slug: "sparky-nature",
   },
   {
     emoji: "🏠",
@@ -268,14 +281,17 @@ export const projects = [
     description: "Rent management app",
     tech: ["React", "TypeScript"],
     link: "https://github.com/sciffany/rent-bills",
-    category: "Utilities",
+    category: ProjectCategory.Utilities,
+    image: "/rent-bills.png",
+    slug: "rent-bills",
   },
   {
     emoji: "🔍",
     title: "Static Program Analyser",
     description: "Code parser",
     tech: ["C++"],
-    category: "School Projects",
+    category: ProjectCategory.SchoolProjects,
+    slug: "static-program-analyser",
   },
   {
     emoji: "🧩",
@@ -283,14 +299,16 @@ export const projects = [
     description: "Puzzle hunt game",
     tech: ["Django"],
     link: "https://sciffany.pythonanywhere.com/puzzle/tell-me-a-story",
-    category: "Games",
+    category: ProjectCategory.Games,
+    slug: "tell-me-a-story",
   },
   {
     emoji: "🎤",
     title: "Audio Stenography",
     description: "Conceal messages in audio",
     tech: ["MATLAB"],
-    category: "School Projects",
+    category: ProjectCategory.SchoolProjects,
+    slug: "audio-stenography",
   },
   {
     emoji: "🎓",
@@ -298,7 +316,8 @@ export const projects = [
     description: "Crowdsourced exam answers",
     tech: ["Ruby on Rails"],
     link: "https://github.com/turbocharged-potato/pypagao-fullstack",
-    category: "School Projects",
+    category: ProjectCategory.SchoolProjects,
+    slug: "pypagao",
   },
   {
     emoji: "🪐",
@@ -306,7 +325,8 @@ export const projects = [
     description: "Nerdy trivia bot",
     tech: ["Telegram Bot", "Typescript"],
     link: "https://t.me/neatquizbot",
-    category: "Games",
+    category: ProjectCategory.Games,
+    slug: "neatquiz",
   },
   {
     emoji: "🧊",
@@ -314,7 +334,8 @@ export const projects = [
     description: "Icebreaker bot",
     tech: ["Telegram Bot", "Typescript"],
     link: "https://t.me/icybreakerbot",
-    category: "Games",
+    category: ProjectCategory.Games,
+    slug: "icybreaker",
   },
   {
     emoji: "🔒",
@@ -322,7 +343,8 @@ export const projects = [
     description: "Password guessing game",
     tech: ["Nextjs"],
     link: "https://pword.vercel.app/",
-    category: "Games",
+    category: ProjectCategory.Games,
+    slug: "password",
   },
   {
     emoji: "🔤",
@@ -330,7 +352,8 @@ export const projects = [
     description: "Word guessing game",
     tech: ["Nextjs"],
     link: "https://pword.vercel.app/2",
-    category: "Games",
+    category: ProjectCategory.Games,
+    slug: "passwordle",
   },
   {
     emoji: "🔤",
@@ -338,7 +361,8 @@ export const projects = [
     description: "Anagram word game",
     tech: ["Nextjs"],
     link: "/anagram",
-    category: "Games",
+    category: ProjectCategory.Games,
+    slug: "entropius-anagram",
   },
   {
     emoji: "🌳",
@@ -346,7 +370,8 @@ export const projects = [
     description: "Flashcards made fun",
     tech: ["Nextjs"],
     link: "https://forest-duel.vercel.app/",
-    category: "Games",
+    category: ProjectCategory.Games,
+    slug: "forest-duel",
   },
   {
     emoji: "🧠",
@@ -354,15 +379,17 @@ export const projects = [
     description: "EEG analysis",
     tech: ["MATLAB"],
     link: "https://github.com/sciffany/brain-research",
-    category: "School Projects",
+    category: ProjectCategory.SchoolProjects,
+    slug: "brain-research",
   },
   {
     emoji: "🔔",
     title: "NotifBuddy",
-    description: "Notification assistant",
+    description: "AI assistant scheduler",
     tech: ["Telegram Bot", "Typescript"],
     link: "https://t.me/notifbuddybot",
-    category: "Utilities",
+    category: ProjectCategory.Utilities,
+    slug: "notifbuddy",
   },
   {
     emoji: "🐶",
@@ -370,7 +397,8 @@ export const projects = [
     description: "Minigames for virtual pet site",
     tech: ["Phaser"],
     link: "/powerpets-games",
-    category: "Games",
+    category: ProjectCategory.Games,
+    slug: "powerpets-games",
   },
   {
     emoji: "🎮",
@@ -378,7 +406,8 @@ export const projects = [
     description: "Adobe Flash games",
     tech: ["Flash", "ActionScript"],
     link: "/flash-games",
-    category: "Games",
+    category: ProjectCategory.Games,
+    slug: "flash-games",
   },
   {
     emoji: "🔒",
@@ -386,47 +415,55 @@ export const projects = [
     description: "Security seals website",
     tech: ["Nextjs", "SEO"],
     link: "https://www.mastersealcorporation.com/",
-    category: "Non-Tech",
+    category: ProjectCategory.NonTech,
+    image: "/masterseal.png",
+    slug: "masterseal-corporation",
   },
   {
     emoji: "🎤",
     title: "Compositions",
     description: "Music compositions",
     link: "https://musescore.com/user/18234171",
-    category: "Non-Tech",
+    category: ProjectCategory.NonTech,
+    slug: "compositions",
   },
   {
     emoji: "👾",
     title: "Gevardonn",
     description: "Orignal character creations",
-    category: "Non-Tech",
+    category: ProjectCategory.NonTech,
+    slug: "gevardonn",
   },
   {
     emoji: "🎮",
     title: "Powerpoint Games",
     description: "Powerpoint games",
     link: "/powerpoint-games",
-    category: "Non-Tech",
+    category: ProjectCategory.Games,
+    slug: "powerpoint-games",
   },
   {
     emoji: "🎨",
     title: "Redbubble",
     description: "Nerdy t-shirt designs",
     link: "https://www.redbubble.com/people/sciffany/shop",
-    category: "Non-Tech",
+    category: ProjectCategory.NonTech,
+    slug: "redbubble",
   },
   {
     emoji: "🧶",
     title: "Tiff Crochets",
     description: "Crochet artworks",
     link: "https://take.app/tiffcrochets/search",
-    category: "Non-Tech",
+    category: ProjectCategory.NonTech,
+    slug: "tiff-crochets",
   },
   {
     emoji: "💣",
     title: "Minesweeper",
     description: "Minesweeper game",
     link: "https://github.com/sciffany/minesweeper",
-    category: "Games",
+    category: ProjectCategory.Games,
+    slug: "minesweeper",
   },
 ];

@@ -148,10 +148,11 @@
       0 0/350px 350px repeat;
   animation: twinkle 8s ease-in-out infinite;
   opacity: 0.6;
+  z-index: 0;
 }
 
-/* Ensure content sits above the star overlay */
-.starfield > * {
+/* Ensure content sits above the star overlay without affecting fixed modals */
+.starfield > :not(.fixed) {
   position: relative;
   z-index: 1;
 }

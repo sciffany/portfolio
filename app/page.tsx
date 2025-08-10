@@ -46,7 +46,7 @@ export default function Home() {
           alt='logo'
           width={250}
           height={250}
-          className='rounded-full'
+          className='rounded-full object-cover'
         />
         <div className='mx-6 rounded-xl'>
           <article className='bg-slate-200 rounded-xl w-full flex flex-col overflow-hidden transition hover:brightness-105'>

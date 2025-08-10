@@ -5,21 +5,6 @@ import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Image from "next/image";
 
-export const lato = Lato({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "700", "900"],
-});
-
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["300", "400", "700"],
-});
-
-const merriweather = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "700", "900"],
-});
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -38,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${poppins.className} antialiased bg-white`}>
-        <header className='fixed top-0 left-0 right-0 z-50 bg-white/50 backdrop-blur-md border-b'>
+        <header className='fixed top-0 left-0 right-0 z-50 bg-white/50 backdrop-blur-md'>
           <nav className='mx-4 sm:mx-6 lg:mx-48 p-6 h-16 flex items-center justify-between'>
             <Link
               href='/'

@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import "./page.css";
 import { Poppins } from "next/font/google";
 import { designs, DESIGN_CATEGORIES, DesignCategory } from "../lib/data";
 
@@ -44,7 +43,7 @@ export default function Home() {
                 className='group rounded-xl overflow-hidden bg-white transition'
               >
                 <a
-                  href={design.link}
+                  href={`/design/${design.slug}`}
                   target='_blank'
                   rel='noopener noreferrer'
                   aria-label={`Open ${design.title}`}
@@ -62,20 +61,12 @@ export default function Home() {
                       className='absolute inset-0 bg-white opacity-0 transition-opacity duration-200 group-hover:opacity-30'
                     />
                   </div>
-                  <figcaption className='text-md font-semibold text-center text-black py-2 px-2'>
+                  <figcaption className='font-semibold text-md text-center text-black py-2 px-2'>
                     {design.title}
                   </figcaption>
                 </a>
               </figure>
             ))}
-          </div>
-          <div className='flex flex-row items-center space-x-1'>
-            <div className='flex flex-row items-center space-x-1'>
-              <div>
-                Contact me at{" "}
-                <span className='text-blue-500'>hello@sciffany.com</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
