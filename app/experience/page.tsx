@@ -25,7 +25,7 @@ export default function Experience() {
       <div className='bg-white/80 mx-6 lg:mx-48'>
         <div className='mx-6 lg:mx-16 py-10'>
           <h1 className='text-3xl font-bold text-center text-black'>
-            ༺ Work Experience ༻
+            ༺ Experience ༻
           </h1>
           <nav
             aria-label='Design categories'
