@@ -1,21 +1,26 @@
-import { Playfair_Display, Poppins, Quicksand } from "next/font/google";
+import { Metadata } from "next";
 import { experiences } from "../lib/data";
 import "../page.css";
+import { poppins } from "../lib/fonts";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+export const metadata: Metadata = {
+  title: "Experience | Tiffany Sia Chong",
+  description:
+    "My professional experience in software engineering, data engineering, and teaching roles.",
+  keywords: [
+    "experience",
+    "software engineer",
+    "data engineer",
+    "teaching assistant",
+    "career",
+  ],
+  openGraph: {
+    title: "Experience | Tiffany Sia Chong",
+    description:
+      "My professional experience in software engineering, data engineering, and teaching roles.",
+    type: "website",
+  },
+};
 
 export default function Experience() {
   return (

@@ -132,14 +132,16 @@ export enum DesignCategory {
   Design = "Design",
   Animation = "Animation",
   Drawings = "Drawings",
-  Handicrafts = "Handicrafts",
+  Physical = "Physical",
+  All = "All",
 }
 
 export const DESIGN_CATEGORIES: readonly DesignCategory[] = [
+  DesignCategory.All,
   DesignCategory.Design,
   DesignCategory.Animation,
   DesignCategory.Drawings,
-  DesignCategory.Handicrafts,
+  DesignCategory.Physical,
 ];
 
 export const designs = [

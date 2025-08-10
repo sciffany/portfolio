@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+import { poppins } from "./lib/fonts";
 
 export const metadata: Metadata = {
   title: "Tiffany Sia Chong | Software Engineer & Graphic Designer",

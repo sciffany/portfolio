@@ -1,12 +1,34 @@
-import { projects } from "@/app/lib/data";
-import { Poppins } from "next/font/google";
+import { Metadata } from "next";
+import { poppins } from "../../layout";
+import { projects } from "../../lib/data";
 import Image from "next/image";
 import "../../page.css";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const project = projects.find((p) => p.slug === params.slug);
+
+  return {
+    title: `${project?.title || "Project"} | Tiffany Sia Chong`,
+    description: project?.description || "View this project from my portfolio.",
+    keywords: [
+      "project",
+      "software engineering",
+      "web development",
+      "portfolio",
+      project?.title || "",
+    ],
+    openGraph: {
+      title: `${project?.title || "Project"} | Tiffany Sia Chong`,
+      description:
+        project?.description || "View this project from my portfolio.",
+      type: "website",
+    },
+  };
+}
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = projects.find((p) => p.slug === params.slug);

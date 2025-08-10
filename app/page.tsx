@@ -1,13 +1,28 @@
+import { Metadata } from "next";
 import "./page.css";
 import Image from "next/image";
-import { Poppins } from "next/font/google";
+import { poppins } from "./lib/fonts";
 import { description, writeup } from "./lib/data";
 import ReactMarkdown from "react-markdown";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+export const metadata: Metadata = {
+  title: "Tiffany Sia Chong | Software Engineer & Graphic Designer",
+  description:
+    "Software Engineer and Graphic Designer passionate about creating innovative solutions and beautiful designs.",
+  keywords: [
+    "software engineer",
+    "graphic designer",
+    "web development",
+    "design",
+    "portfolio",
+  ],
+  openGraph: {
+    title: "Tiffany Sia Chong | Software Engineer & Graphic Designer",
+    description:
+      "Software Engineer and Graphic Designer passionate about creating innovative solutions and beautiful designs.",
+    type: "website",
+  },
+};
 
 export default function Home() {
   return (

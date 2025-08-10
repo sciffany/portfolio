@@ -166,3 +166,8 @@
     opacity: 0.85;
   }
 }
+
+/* Design content paragraph styling */
+.img-skip img {
+  padding-top: 2rem;
+}

@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { navbarItems, siteConfig } from '../lib/navbar-data';
+import Link from "next/link";
+import Image from "next/image";
+import { navbarItems, siteConfig } from "../lib/navbar-data";
 
 export default function DesktopNavbar() {
   return (
@@ -18,12 +18,12 @@ export default function DesktopNavbar() {
         />
         {siteConfig.name}
       </Link>
-      <div className='flex items-center space-x-6 text-sm font-medium'>
+      <div className='flex items-center space-x-6 text-sm'>
         {navbarItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className='text-gray-800 hover:text-black font-semibold text-lg'
+            className='text-gray-800 hover:text-black text-lg'
           >
             {item.label}
           </Link>
@@ -31,4 +31,4 @@ export default function DesktopNavbar() {
       </div>
     </nav>
   );
-} 
+}
