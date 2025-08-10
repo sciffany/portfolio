@@ -132,7 +132,7 @@ export default function MobileNavbar() {
             <div className='p-6 border-t border-gray-500'>
               <div className='flex items-center justify-center space-x-4'>
                 <a
-                  href='mailto:sciffany@gmail.com'
+                  href={`mailto:${siteConfig.email}`}
                   className='w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors'
                   aria-label='Email'
                 >
@@ -151,7 +151,7 @@ export default function MobileNavbar() {
                   </svg>
                 </a>
                 <a
-                  href='https://linkedin.com'
+                  href={siteConfig.social.linkedin}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors'
@@ -166,7 +166,7 @@ export default function MobileNavbar() {
                   </svg>
                 </a>
                 <a
-                  href='https://github.com'
+                  href={siteConfig.social.github}
                   target='_blank'
                   rel='noopener noreferrer'
                   className='w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors'

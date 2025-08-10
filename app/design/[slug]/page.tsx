@@ -57,13 +57,19 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     "/wp-media/"
   );
 
+  const video = design?.["content:encoded"].match(
+    /https:\/\/www\.youtube\.com\/watch\?v=([a-zA-Z0-9_-]+)/
+  )?.[1];
+
+  const fullVideoUrl = `https://www.youtube.com/watch?v=${video}`;
+
   const category = getCategory(design?.category);
 
   return (
     <section
       className={`${poppins.className} starfield w-full text-black bg-gradient-to-br from-emerald-800 to-slate-900 flex flex-col space-y-10`}
     >
-      <div className='bg-white/80 mx-6 lg:mx-48'>
+      <div className='bg-white/80 mx-6 lg:mx-48 pb-28'>
         <div className='mx-6 lg:mx-16 py-10'>
           <Breadcrumb
             items={[
@@ -84,9 +90,22 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
 
         <div
-          className='mx-6 lg:mx-16 mb-28 img-skip'
-          dangerouslySetInnerHTML={{ __html: content || "" }}
+          className='mx-6 lg:mx-16'
+          dangerouslySetInnerHTML={{
+            __html:
+              content
+                ?.replaceAll(fullVideoUrl, "")
+                .replaceAll("\n", "<br />") || "",
+          }}
         />
+        {video && (
+          <div className='mx-6 lg:mx-16'>
+            <iframe
+              src={`https://www.youtube.com/embed/${video}`}
+              className='w-full h-full aspect-video'
+            />
+          </div>
+        )}
       </div>
     </section>
   );

@@ -62,7 +62,7 @@ export default function ExperienceContent() {
             ))}
           </ul>
         </nav>
-        <div className={`text-black text-md flex flex-col gap-6 mt-8`}>
+        <div className={`text-black text-md flex flex-col gap-6 mt-8 mb-16`}>
           {filteredExperiences.map((experience) => (
             <article
               key={`${experience.title}-${experience.date}`}

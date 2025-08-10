@@ -4,7 +4,7 @@ export function getCategory(category: any) {
   let cat = Array.isArray(category)
     ? category
         ?.map((c: any) => c["#text"])
-        .filter((c: any) => DESIGN_CATEGORIES.includes(c))[0]
+        .find((c: any) => FULL_CATEGORIES.includes(c))
     : category?.["#text"];
 
   switch (cat) {
@@ -26,3 +26,16 @@ export function getCategory(category: any) {
       return cat;
   }
 }
+
+const FULL_CATEGORIES = [
+  "Stuffed toy",
+  "Model",
+  "Physical",
+  "Poster",
+  "Proposal",
+  "Design",
+  "Link",
+  "Sketch",
+  "Drawings",
+  "Animation",
+];

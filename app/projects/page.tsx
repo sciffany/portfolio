@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import ProjectsClient from "../components/projects-client";
+import { ProjectCategory } from "../lib/data";
 
 export const metadata: Metadata = {
   title: "Projects | Tiffany Sia Chong",
@@ -20,6 +21,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ProjectsPage() {
-  return <ProjectsClient />;
+export default function ProjectsPage({
+  searchParams,
+}: {
+  searchParams: { category: ProjectCategory };
+}) {
+  return <ProjectsClient searchParams={searchParams} />;
 }

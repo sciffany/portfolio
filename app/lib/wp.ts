@@ -2351,7 +2351,7 @@ export const wp = {
           ],
         },
         {
-          title: "Nothing FARM",
+          title: "Nothing Farm",
           link: "https://sciffany.wordpress.com/portfolio/nothing-farm/",
           pubDate: "Sun, 12 Feb 2023 11:14:31 +0000",
           "dc:creator": "sciffany",

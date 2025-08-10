@@ -20,5 +20,10 @@ export const navbarItems: NavItem[] = [
 
 export const siteConfig = {
   name: 'Tiffany Sia Chong',
-  logo: '/logo_white.png'
+  logo: '/logo_white.png',
+  email: 'hello@sciffany.com',
+  social: {
+    github: 'https://github.com/sciffany',
+    linkedin: 'https://linkedin.com/in/sciffany'
+  }
 }; 

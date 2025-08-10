@@ -4,10 +4,15 @@ import { PROJECT_CATEGORIES, ProjectCategory, projects } from "../lib/data";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { poppins } from "../lib/fonts";
+import { useRouter } from "next/navigation";
 
-export default function ProjectsClient() {
-  const [selectedCategory, setSelectedCategory] =
-    useState<ProjectCategory | null>(null);
+export default function ProjectsClient({
+  searchParams,
+}: {
+  searchParams: { category: ProjectCategory };
+}) {
+  const router = useRouter();
+  const selectedCategory = searchParams.category || null;
   const [modalProject, setModalProject] = useState<
     (typeof projects)[number] | null
   >(null);
@@ -60,7 +65,7 @@ export default function ProjectsClient() {
               <li key='All'>
                 <button
                   type='button'
-                  onClick={() => setSelectedCategory(null)}
+                  onClick={() => router.push("/projects")}
                   className={`px-3 py-1 rounded-full border transition ${
                     selectedCategory === null
                       ? "border-emerald-600 bg-emerald-100 text-emerald-800"
@@ -74,7 +79,9 @@ export default function ProjectsClient() {
                 <li key={category}>
                   <button
                     type='button'
-                    onClick={() => setSelectedCategory(category)}
+                    onClick={() =>
+                      router.push(`/projects?category=${category}`)
+                    }
                     className={`px-3 py-1 rounded-full border transition ${
                       selectedCategory === category
                         ? "border-emerald-600 bg-emerald-100 text-emerald-800"

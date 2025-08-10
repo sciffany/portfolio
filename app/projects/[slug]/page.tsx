@@ -3,6 +3,7 @@ import { poppins } from "../../lib/fonts";
 import { projects } from "../../lib/data";
 import Image from "next/image";
 import "../../page.css";
+import Breadcrumb from "../../components/breadcrumb";
 
 // Generate static params for all project slugs
 export async function generateStaticParams() {
@@ -47,6 +48,21 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     >
       <div className='bg-white/80 mx-6 lg:mx-48'>
         <div className='mx-6 lg:mx-16 py-10'>
+          <Breadcrumb
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Projects", href: "/projects" },
+              ...(project?.category
+                ? [
+                    {
+                      label: project.category,
+                      href: `/projects?category=${project.category}`,
+                    },
+                  ]
+                : []),
+              { label: project?.title || "Project" },
+            ]}
+          />
           <h1 className='text-3xl font-bold text-center text-black'>
             {project?.title}
           </h1>
