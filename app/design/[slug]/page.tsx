@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import { poppins } from "../../lib/fonts";
-import { DESIGN_CATEGORIES, designs } from "../../lib/data";
 import "../../page.css";
 import { wp } from "@/app/lib/wp";
 import Breadcrumb from "../../components/breadcrumb";
@@ -11,7 +10,9 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const design = designs.find((d) => d.slug === params.slug);
+  const design = wp.rss.channel.item.find(
+    (d) => d.link.split("/").slice(-2)[0] === params.slug
+  );
 
   return {
     title: `${design?.title || "Design"} | Tiffany Sia Chong`,

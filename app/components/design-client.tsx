@@ -15,9 +15,10 @@ export default function DesignClient() {
   const pathname = usePathname();
 
   // Get category from URL search params
-  const selectedCategory = searchParams.get(
-    "category"
-  ) as DesignCategory | null;
+  // If no category param is present, treat it as "All Category"
+  const selectedCategory =
+    (searchParams.get("category") as DesignCategory | null) ||
+    DesignCategory.All;
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
@@ -33,6 +34,8 @@ export default function DesignClient() {
   );
 
   const handleCategoryClick = (category: DesignCategory) => {
+    // If clicking on the currently selected category, remove the param (which will default to All)
+    // If clicking on a different category, set that category
     const newCategory = selectedCategory === category ? null : category;
     const queryString = createQueryString("category", newCategory || "");
     router.push(`${pathname}?${queryString}`);

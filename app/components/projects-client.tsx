@@ -63,8 +63,8 @@ export default function ProjectsClient() {
                   onClick={() => setSelectedCategory(null)}
                   className={`px-3 py-1 rounded-full border transition ${
                     selectedCategory === null
-                      ? "border-emerald-600 bg-emerald-600 text-white"
-                      : "border-slate-300 bg-white/70 hover:bg-white"
+                      ? "border-emerald-600 bg-emerald-100 text-emerald-800"
+                      : "border-slate-300 bg-white/70 hover:bg-white text-slate-700"
                   }`}
                 >
                   All
@@ -77,8 +77,8 @@ export default function ProjectsClient() {
                     onClick={() => setSelectedCategory(category)}
                     className={`px-3 py-1 rounded-full border transition ${
                       selectedCategory === category
-                        ? "border-emerald-600 bg-emerald-600 text-white"
-                        : "border-slate-300 bg-white/70 hover:bg-white"
+                        ? "border-emerald-600 bg-emerald-100 text-emerald-800"
+                        : "border-slate-300 bg-white/70 hover:bg-white text-slate-700"
                     }`}
                   >
                     {category}

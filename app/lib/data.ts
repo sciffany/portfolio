@@ -1,28 +1,15 @@
-export const writeup = `I’m Tiffany Sia Chong, a final year Computer Science undergraduate at National University of Singapore with a passion for software development and computer graphics.
-
-
-
-Coding
-I have always loved solving math problems and puzzles, as well as building and creating things, so I naturally loved coding. Coding is an opportunity for me to contribute to the society while doing what I love most. Check out my work experience and software projects.
-
-Game development
-Inspired by the book Invent Your Own Computer Games in Python by Al Sweigart, I began coding in 2013 and have since then developed several games.
-
-
-Graphic Design
-Vibrant colors and bouncy animations of cartoons have always inspired me, and I strive to emulate this in the graphics I design. I have worked on many projects and several clients including volunteer welfare organisations.
-
-
-
-Contact Me
-I am always up to work on projects that will impact the community, and am always up for a challenge. Get in touch at hello@sciffany.com`;
-
 export const description = `
 - Loves making [apps](/projects), [artworks](/design) and people smile
 - Pescatarian, [cruciverbalist](https://crosshare.org/crosswords/vfN5qIXXAUb6rluYdGPH/break-a-leg) and [ornithophile](https://www.youtube.com/shorts/u-1EousPvG8)
 - Excited to work on impactful projects and go the extra mile
 - Get in touch at [hello@sciffany.com](mailto:hello@sciffany.com)
 `;
+
+export enum ExperienceCategory {
+  Software_Engineer = "Software Engineer",
+  Data_Engineer = "Data Engineer",
+  Teaching_Assistant = "Teaching Assistant",
+}
 
 export const experiences = [
   {
@@ -39,6 +26,7 @@ export const experiences = [
       "Shipped an analytics dashboard",
     ],
     tech: ["Next.js", "TypeScript"],
+    category: ExperienceCategory.Software_Engineer,
   },
   {
     title: "Apple",
@@ -47,6 +35,7 @@ export const experiences = [
     description: ["Built web tools to improve reliability"],
     tech: ["Ember.js", "Ruby on Rails", "PostgreSQL"],
     link: "https://www.apple.com/",
+    category: ExperienceCategory.Software_Engineer,
   },
   {
     title: "Runners Planet",
@@ -57,6 +46,7 @@ export const experiences = [
       "Developed a social network for sports",
     ],
     tech: ["React Native", "GraphQL", "Mapbox", "Getstream"],
+    category: ExperienceCategory.Software_Engineer,
   },
   {
     title: "National University of Singapore",
@@ -66,6 +56,7 @@ export const experiences = [
       "Built a visual-novel engine to teach introductory programming",
     ],
     tech: ["Phaser", "React"],
+    category: ExperienceCategory.Software_Engineer,
   },
   {
     title: "StaffAny Pte Ltd",
@@ -75,6 +66,7 @@ export const experiences = [
       "Developed a web timeclock used by thousands across the country",
     ],
     tech: ["Node.js", "React", "TypeScript"],
+    category: ExperienceCategory.Software_Engineer,
   },
   {
     title: "StaffAny Pte Ltd",
@@ -87,6 +79,7 @@ export const experiences = [
       "Informed product decisions with data insights",
     ],
     tech: ["GCP", "BigQuery", "SQL", "Segment.js"],
+    category: ExperienceCategory.Data_Engineer,
   },
   {
     title: "Transcelestial Technologies",
@@ -97,6 +90,7 @@ export const experiences = [
       "Used in a point-and-track laser system for ground-to-satellite communication",
     ],
     tech: ["C++", "Camera API", "Firmware", "Hardware Graphics"],
+    category: ExperienceCategory.Software_Engineer,
   },
   {
     title: "Sanfo Intl Trading Inc",
@@ -107,6 +101,7 @@ export const experiences = [
       "Cut operating time by 16 hours per week",
     ],
     tech: ["Google Apps Script", "FileMaker", "Relational database"],
+    category: ExperienceCategory.Software_Engineer,
   },
   {
     title: "Agency for Science and Technology Research",
@@ -114,6 +109,7 @@ export const experiences = [
     date: "June 2015 - February 2016",
     description: ["Researched EEG trends during affective picture viewing"],
     tech: ["MATLAB", "EEG", "Signal processing"],
+    category: ExperienceCategory.Software_Engineer,
   },
   {
     title: "National University of Singapore",
@@ -125,6 +121,7 @@ export const experiences = [
       "Received the Best Tutor Award",
     ],
     tech: ["SICP", "Functional programming"],
+    category: ExperienceCategory.Teaching_Assistant,
   },
 ];
 
@@ -142,79 +139,6 @@ export const DESIGN_CATEGORIES: readonly DesignCategory[] = [
   DesignCategory.Animation,
   DesignCategory.Drawings,
   DesignCategory.Physical,
-];
-
-export const designs = [
-  {
-    title: "Tran(scent)dence",
-    image: "1.png",
-    slug: "transcentdence",
-  },
-  {
-    title: "Young Students' Recital",
-    image: "fin1.png",
-    slug: "young-students-recital",
-  },
-  {
-    title: "Design 3",
-    description: "Description 3",
-    image: "newsad_large.png",
-  },
-  {
-    title: "Design 4",
-    description: "Description 4",
-    image: "hope.jpeg",
-  },
-  {
-    title: "Design 5",
-    description: "Description 5",
-    image: "3.png",
-  },
-  {
-    title: "Design 6",
-    description: "Description 6",
-    image: "5.png",
-  },
-  {
-    title: "Design 7",
-    description: "Description 7",
-    image: "7.png",
-  },
-  {
-    title: "Design 8",
-    description: "Description 8",
-    image: "tess.png",
-  },
-  {
-    title: "Design 9",
-    description: "Description 9",
-    image: "chopin-1-1.png",
-  },
-  {
-    title: "Design 10",
-    description: "Description 10",
-    image: "bipc.png",
-  },
-  {
-    title: "Design 11",
-    description: "Description 11",
-    image: "shine.jpeg",
-  },
-  {
-    title: "Design 12",
-    description: "Description 12",
-    image: "2.png",
-  },
-  {
-    title: "Design 13",
-    description: "Description 13",
-    image: "4.png",
-  },
-  {
-    title: "Design 14",
-    description: "Description 14",
-    image: "6.png",
-  },
 ];
 
 export enum ProjectCategory {
