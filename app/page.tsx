@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import "./page.css";
 import Image from "next/image";
 import { poppins } from "./lib/fonts";
-import { description, writeup } from "./lib/data";
+import { description } from "./lib/data";
 import ReactMarkdown from "react-markdown";
 
 export const metadata: Metadata = {
