@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { poppins } from "../../layout";
+import { poppins } from "../../lib/fonts";
 import { projects } from "../../lib/data";
 import Image from "next/image";
 import "../../page.css";
