@@ -2,7 +2,6 @@ import Game from "./game.js";
 import EndGame from "./endGame.js";
 import StartGame from "./startGame.js";
 import Loading from "./loading.js";
-import Phaser from "phaser";
 
 class MyGame extends Phaser.Game {
   constructor(config) {

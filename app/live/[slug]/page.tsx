@@ -95,11 +95,7 @@ export default function LivePage({ params }: { params: { slug: string } }) {
           <LivePageContent params={params} />
         </div>
         <div className='flex justify-center my-10'>
-          <Link
-            href={project?.link || ""}
-            target='_blank'
-            rel='noopener noreferrer'
-          >
+          <Link href={`/projects/${params.slug}`}>
             <button className='bg-gradient-to-r from-emerald-950 font-semibold to-gray-900 text-white px-4 py-2 rounded-md'>
               Learn more
             </button>
