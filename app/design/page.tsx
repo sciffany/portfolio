@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Suspense } from "react";
 import DesignClient from "../components/design-client";
 
 export const metadata: Metadata = {
@@ -21,5 +22,9 @@ export const metadata: Metadata = {
 };
 
 export default function DesignPage() {
-  return <DesignClient />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <DesignClient />
+    </Suspense>
+  );
 }
