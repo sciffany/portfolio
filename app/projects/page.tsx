@@ -6,16 +6,6 @@ import "../page.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -27,6 +17,10 @@ export default function Experience() {
   const [modalProject, setModalProject] = useState<
     (typeof projects)[number] | null
   >(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+  const [activeProjectSlug, setActiveProjectSlug] = useState<string | null>(
+    null
+  );
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -36,6 +30,19 @@ export default function Experience() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  useEffect(() => {
+    const detectTouch = () => {
+      const hasTouch =
+        typeof window !== "undefined" &&
+        ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+      setIsTouchDevice(Boolean(hasTouch));
+    };
+
+    detectTouch();
+    window.addEventListener("resize", detectTouch);
+    return () => window.removeEventListener("resize", detectTouch);
   }, []);
 
   const filteredProjects = selectedCategory
@@ -93,6 +100,13 @@ export default function Experience() {
               <article
                 key={`${project.title}`}
                 className='relative group bg-white rounded-lg w-full flex flex-col overflow-hidden transition'
+                onClick={() => {
+                  if (isTouchDevice) {
+                    setActiveProjectSlug((current) =>
+                      current === project.slug ? null : project.slug
+                    );
+                  }
+                }}
               >
                 <div className='text-xl font-semibold  bg-gray-900 h-[150px]'>
                   {project.image && (
@@ -119,12 +133,19 @@ export default function Experience() {
                     {project.description}
                   </h3>
                 </div>
-                <div className='absolute inset-0 bg-white/90 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center'>
+                <div
+                  className={`absolute inset-0 bg-white/90 ${
+                    isTouchDevice && activeProjectSlug === project.slug
+                      ? "opacity-100 pointer-events-auto"
+                      : "opacity-0 pointer-events-none"
+                  } lg:group-hover:opacity-100 lg:group-hover:pointer-events-auto transition-opacity duration-200 flex items-center justify-center`}
+                >
                   <div className='text-center flex flex-col gap-4 space-y-2 text-gray-900'>
                     <button
                       type='button'
                       className='cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md'
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.stopPropagation();
                         window.open(`/projects/${project.slug}`, "_blank");
                       }}
                     >
@@ -132,7 +153,8 @@ export default function Experience() {
                     </button>
                     <button
                       className='cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md'
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.stopPropagation();
                         window.open(project.link, "_blank");
                       }}
                     >
@@ -145,57 +167,6 @@ export default function Experience() {
           </div>
         </div>
       </div>
-      {/* {modalProject && (
-        <div
-          className='fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4'
-          role='dialog'
-          aria-modal='true'
-          aria-label={`${modalProject.title} details`}
-          onClick={() => setModalProject(null)}
-        >
-          <div
-            className='bg-white rounded-lg max-w-lg w-full overflow-hidden shadow-2xl'
-            onClick={(e) => e.stopPropagation()}
-          >
-            {modalProject.image && (
-              <Image
-                src={modalProject.image}
-                alt={modalProject.title}
-                width={1000}
-                height={600}
-                className='w-full h-56 object-cover'
-              />
-            )}
-            <div className='p-5 text-slate-900'>
-              <h2 className='text-xl font-semibold'>{modalProject.title}</h2>
-              {modalProject.description && (
-                <p className='mt-2 text-slate-700'>
-                  {modalProject.description}
-                </p>
-              )}
-              <div className='mt-4 flex items-center gap-3'>
-                {modalProject.link && (
-                  <button
-                    className='cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md'
-                    onClick={() => {
-                      window.open(modalProject.link, "_blank");
-                    }}
-                  >
-                    Go to project
-                  </button>
-                )}
-                <button
-                  type='button'
-                  className='ml-auto px-3 py-1 rounded bg-slate-200 hover:bg-slate-300'
-                  onClick={() => setModalProject(null)}
-                >
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )} */}
     </section>
   );
 }

@@ -7,17 +7,6 @@ import { navbarItems, siteConfig } from "../lib/navbar-data";
 
 export default function MobileNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -44,7 +33,7 @@ export default function MobileNavbar() {
     <>
       {/* Main Navbar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80`}
       >
         <div className='px-4 py-3 flex items-center justify-between'>
           {/* Logo */}
