@@ -28,13 +28,6 @@ export default function Home() {
   return (
     <div className={poppins.className}>
       <section className='starfield w-full py-14 lg:py-36 text-white bg-gradient-to-br from-emerald-800 to-slate-900 flex flex-col lg:flex-row justify-center items-center gap-10'>
-        {/* <Image
-          src='/logo_white.png'
-          alt='logo'
-          width={250}
-          height={250}
-          className='rounded-full'
-        /> */}
         <Image
           src='/my-flash-kid.webp'
           alt='logo'

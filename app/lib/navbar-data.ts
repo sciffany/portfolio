@@ -5,25 +5,29 @@ export interface NavItem {
 
 export const navbarItems: NavItem[] = [
   {
-    href: '/experience',
-    label: 'Experience'
+    href: "/experience",
+    label: "Experience",
   },
   {
-    href: '/projects',
-    label: 'Projects'
+    href: "/projects",
+    label: "Projects",
   },
   {
-    href: '/design',
-    label: 'Designs'
-  }
+    href: "/games",
+    label: "Games",
+  },
+  {
+    href: "/designs",
+    label: "Designs",
+  },
 ];
 
 export const siteConfig = {
-  name: 'Tiffany Sia Chong',
-  logo: '/logo_white.png',
-  email: 'hello@sciffany.com',
+  name: "Tiffany Sia Chong",
+  logo: "/logo_white.png",
+  email: "hello@sciffany.com",
   social: {
-    github: 'https://github.com/sciffany',
-    linkedin: 'https://linkedin.com/in/sciffany'
-  }
-}; 
+    github: "https://github.com/sciffany",
+    linkedin: "https://linkedin.com/in/sciffany",
+  },
+};

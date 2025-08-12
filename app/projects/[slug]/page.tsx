@@ -72,14 +72,16 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         </div>
         <div className='mx-6 lg:mx-16 py-6 grid grid-cols-1 lg:grid-cols-2'>
           <div>
-            <Image
-              src={`${project?.image}`}
-              alt={project?.title || "Project Image"}
-              width={400}
-              height={300}
-              sizes='(min-width: 1024px) 500px, 100vw'
-              className='h-auto w-[400px] object-contain rounded-lg shadow-lg'
-            />
+            {project?.image && (
+              <Image
+                src={`${project?.image}`}
+                alt={project?.title || "Project Image"}
+                width={400}
+                height={300}
+                sizes='(min-width: 1024px) 500px, 100vw'
+                className='h-auto w-[400px] object-contain rounded-lg shadow-lg'
+              />
+            )}
           </div>
           <div className='flex flex-col gap-4'>
             <p className='text-black'>

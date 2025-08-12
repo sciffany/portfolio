@@ -68,12 +68,12 @@ export default function LivePage({ params }: { params: { slug: string } }) {
           <Breadcrumb
             items={[
               { label: "Home", href: "/" },
-              { label: "Projects", href: "/projects" },
+              { label: "Games", href: "/games" },
               ...(project?.category
                 ? [
                     {
                       label: project.category,
-                      href: `/projects?category=${project.category}`,
+                      href: `/games?category=${project.category}`,
                     },
                   ]
                 : []),
