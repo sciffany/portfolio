@@ -102,7 +102,7 @@ export default function DesignClient({
               className='group rounded-xl overflow-hidden bg-white transition'
             >
               <a
-                href={`/design/${slug}`}
+                href={`/designs/${slug}`}
                 rel='noopener noreferrer'
                 aria-label={`Open ${design.title}`}
               >

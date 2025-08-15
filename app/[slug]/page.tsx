@@ -1,9 +1,8 @@
 import { Metadata } from "next";
-import { poppins } from "../../lib/fonts";
-import { projects } from "../../lib/data";
-import Image from "next/image";
-import "../../page.css";
-import Breadcrumb from "../../components/breadcrumb";
+import { poppins } from "../lib/fonts";
+import { projects } from "../lib/data";
+import "../page.css";
+import Breadcrumb from "../components/breadcrumb";
 import Christmas from "@/app/components/christmas";
 import Link from "next/link";
 import Maze from "@/app/components/maze";

@@ -179,6 +179,11 @@ export const projects = [
     category: ProjectCategory.Utilities,
     image: "/amigurumi2.png",
     slug: "amigurumi-counter",
+    longDescription:
+      "This app helps you count the number of stitches in your crochet projects.",
+    why: "I made this to help myself with the difficult chore of counting my amigurumi stitches of course!",
+    different:
+      "This actually takes into account the different types of stitches (single, double, half) and notes down stitches per row.",
   },
   {
     emoji: "🏠",
@@ -189,6 +194,10 @@ export const projects = [
     category: ProjectCategory.Utilities,
     image: "/rent-bills.png",
     slug: "rent-bills",
+    longDescription: "This app helps you manage rent collections.",
+    why: "I made this to help my dad manage his rental properties.",
+    different:
+      "This app uses two-column view to show rent dues and payments, so tenants can pay in whatever schedule, frequency and amount they can.",
   },
   {
     emoji: "🔍",
@@ -197,14 +206,26 @@ export const projects = [
     tech: ["C++"],
     category: ProjectCategory.SchoolProjects,
     slug: "static-program-analyser",
+    image: "/spa.png",
+    longDescription:
+      "This program parses a made-up coding language, and tells you which line affects which variables",
+    why: "It was a school project. Moreover, it was a great way to learn about syntax trees.",
+    different:
+      "It contains program knowledge base, which is indexed by variables and variable relationships.",
   },
   {
     emoji: "🎤",
-    title: "Audio Stenography",
+    title: "Audio Steganography",
     description: "Conceal messages in audio",
     tech: ["MATLAB"],
     category: ProjectCategory.SchoolProjects,
-    slug: "audio-stenography",
+    slug: "audio-steganography",
+    image: "/steganography.png",
+    longDescription:
+      "This program conceals messages in audio files, and extracts them later.",
+    why: "It was a school project. Moreover, it's a fun project to play with audio files.",
+    different:
+      "It uses binary encoding, and even Fourier transform concepts to hide messages in audio files.",
   },
   {
     emoji: "🎓",
@@ -214,6 +235,11 @@ export const projects = [
     link: "https://github.com/turbocharged-potato/pypagao-fullstack",
     category: ProjectCategory.SchoolProjects,
     slug: "pypagao",
+    image: "/pyp.png",
+    longDescription: "This program allows students to crowdsource exam answers",
+    why: "It was a school project. Moreover, exam answers are often not given out by schools.",
+    different:
+      "We classify papers based on semester and school, and have a voting system to determine the correct answers.",
   },
 
   {
@@ -224,6 +250,12 @@ export const projects = [
     link: "https://github.com/sciffany/brain-research",
     category: ProjectCategory.SchoolProjects,
     slug: "brain-research",
+    image: "/eeg.png",
+    longDescription:
+      "This program analyzes EEG data to study brain activity during affective picture viewing.",
+    why: "It was a school project. Moreover, brain research!",
+    different:
+      "We found out whether or not EEG is a good predictor of affective picture viewing.",
   },
   {
     emoji: "🔔",
@@ -233,6 +265,12 @@ export const projects = [
     link: "https://t.me/notifbuddybot",
     category: ProjectCategory.Utilities,
     slug: "notifbuddy",
+    image: "/notifbuddy.png?v=2",
+    longDescription:
+      "This program allows you to set up reminders and notifications for your tasks.",
+    why: "I made this to help myself and my friends with remembering small tasks.",
+    different:
+      "It is AI-powered, so you can create reminders using natural language.",
   },
   {
     emoji: "🔒",
@@ -243,6 +281,9 @@ export const projects = [
     category: ProjectCategory.NonTech,
     image: "/masterseal.png",
     slug: "masterseal-corporation",
+    longDescription: "This website allows you to browse security seals online.",
+    why: "I made this to help my parents' business.",
+    different: "It is made completely from scratch, and is SEO-optimized.",
   },
   {
     emoji: "🎤",
@@ -251,6 +292,11 @@ export const projects = [
     link: "https://musescore.com/user/18234171",
     category: ProjectCategory.NonTech,
     slug: "compositions",
+    image: "/music.png",
+    longDescription: "This website allows you to browse my music compositions.",
+    why: "I wanted to learn more about music theory, so I searched for lessons online.",
+    different: "Made by a beginner who knows nothing about music theory.",
+    tech: ["Non-tech"],
   },
   {
     emoji: "👾",
@@ -258,6 +304,13 @@ export const projects = [
     description: "Orignal character creations",
     category: ProjectCategory.NonTech,
     slug: "gevardonn",
+    image: "/gevardonn.png",
+    longDescription:
+      "This website allows you to browse my original character creations.",
+    why: "I made this to compile all my character designs in one place.",
+    different:
+      "It's a world where characters were made by doodling at random times.",
+    tech: ["Non-tech"],
   },
   {
     emoji: "🎨",
@@ -266,6 +319,12 @@ export const projects = [
     link: "https://www.redbubble.com/people/sciffany/shop",
     category: ProjectCategory.NonTech,
     slug: "redbubble",
+    image: "/research.jpg",
+    longDescription:
+      "This website allows you to browse my nerdy t-shirt designs.",
+    why: "I made this with my sister, Jinger (https://jingerchong.com/), to share our nerdy designs .",
+    different: "It's math and science-themed, and not the usual jokes.",
+    tech: ["Non-tech"],
   },
   {
     emoji: "🧶",
@@ -274,6 +333,11 @@ export const projects = [
     link: "https://take.app/tiffcrochets/search",
     category: ProjectCategory.NonTech,
     slug: "tiff-crochets",
+    image: "/tiffcrochets.jpg",
+    longDescription: "This website allows you to browse my crochet artworks.",
+    why: "I made this because I love crocheting.",
+    different: "Not very different, just a lot of crochet artworks.",
+    tech: ["Non-tech"],
   },
 ];
 
