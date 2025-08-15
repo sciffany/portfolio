@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export default function MiniMatch() {
+export default function PhaserGame({ fileName }: { fileName: string }) {
   useEffect(() => {
     const script = document.createElement("script");
     script.src =
@@ -20,7 +20,7 @@ export default function MiniMatch() {
 
     // load the phaser game next
     const gameScript = document.createElement("script");
-    gameScript.src = "/miniMatch/src/main.js";
+    gameScript.src = `${fileName}/src/main.js`;
     gameScript.type = "module";
     gameScript.async = true;
 

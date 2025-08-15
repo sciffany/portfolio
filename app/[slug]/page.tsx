@@ -6,7 +6,8 @@ import Breadcrumb from "../components/breadcrumb";
 import Christmas from "@/app/components/christmas";
 import Link from "next/link";
 import Maze from "@/app/components/maze";
-import MiniMatch from "@/app/components/mini-match";
+import PhaserGame from "@/app/components/phaser-game";
+import GameScript from "../components/game-script";
 
 // Generate static params for all project slugs
 export async function generateStaticParams() {
@@ -50,7 +51,15 @@ function LivePageContent({ params }: { params: { slug: string } }) {
     case "maze":
       return <Maze />;
     case "mini-match":
-      return <MiniMatch />;
+      return <PhaserGame fileName='miniMatch' />;
+    case "mini-bubbles":
+      return <PhaserGame fileName='miniBubbles' />;
+    case "bubbas-blocks":
+      return <PhaserGame fileName='bubbasBlocks' />;
+    case "dicey-mice":
+      return <PhaserGame fileName='diceyMice' />;
+    case "anagram":
+      return <GameScript fileName='anagram/anagram.js' />;
     default:
       return <div>Project not found</div>;
   }

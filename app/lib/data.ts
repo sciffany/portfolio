@@ -379,6 +379,7 @@ export const games = [
     link: "https://sciffany.pythonanywhere.com/puzzle/tell-me-a-story",
     category: GameCategory.Puzzle,
     slug: "tell-me-a-story",
+    image: "/game-images/story.png",
   },
   {
     emoji: "🪐",
@@ -388,6 +389,7 @@ export const games = [
     link: "https://t.me/neatquizbot",
     category: GameCategory.Puzzle,
     slug: "neatquiz",
+    image: "/game-images/neatquiz.png",
   },
   {
     emoji: "🧊",
@@ -397,6 +399,7 @@ export const games = [
     link: "https://t.me/icybreakerbot",
     category: GameCategory.SocialGames,
     slug: "icybreaker",
+    image: "/game-images/icy.png",
   },
   {
     emoji: "🔒",
@@ -406,6 +409,7 @@ export const games = [
     link: "https://pword.vercel.app/",
     category: GameCategory.SocialGames,
     slug: "password",
+    image: "/game-images/password.png",
   },
   {
     emoji: "🔤",
@@ -415,6 +419,7 @@ export const games = [
     link: "https://pword.vercel.app/2",
     category: GameCategory.SocialGames,
     slug: "passwordle",
+    image: "/game-images/passwordle.png",
   },
   {
     emoji: "🔤",
@@ -424,15 +429,17 @@ export const games = [
     link: "/anagram",
     category: GameCategory.Puzzle,
     slug: "entropius-anagram",
+    image: "/game-images/anagram.png",
   },
   {
     emoji: "🌳",
     title: "Forest Duel",
     description: "Flashcards made fun",
     tech: ["Nextjs"],
-    link: "https://forest-duel.vercel.app/",
+    link: "https://forest-duel.vercel.app/quiz/multiplication",
     category: GameCategory.Puzzle,
     slug: "forest-duel",
+    image: "/game-images/forest-duel.png",
   },
   {
     emoji: "🐶",
@@ -442,6 +449,7 @@ export const games = [
     link: "/mini-match",
     category: GameCategory.Powerpet,
     slug: "mini-match",
+    image: "/game-images/minimatch-image.png",
   },
   {
     emoji: "🧱",
@@ -451,15 +459,17 @@ export const games = [
     link: "/bubbas-blocks",
     category: GameCategory.Powerpet,
     slug: "bubbas-blocks",
+    image: "/game-images/bubbas-image.png",
   },
   {
     emoji: "🎈",
     title: "Mini Bubbles",
     description: "Bubble popping game",
     tech: ["Phaser"],
-    link: "/live/mini-bubbles",
+    link: "/mini-bubbles",
     category: GameCategory.Powerpet,
     slug: "mini-bubbles",
+    image: "/game-images/minibubbles-image.png",
   },
   {
     emoji: "🎲",
@@ -469,6 +479,7 @@ export const games = [
     link: "/dicey-mice",
     category: GameCategory.Powerpet,
     slug: "dicey-mice",
+    image: "/game-images/dicey-image.png",
   },
   {
     emoji: "💣",
@@ -477,6 +488,7 @@ export const games = [
     link: "https://github.com/sciffany/minesweeper",
     category: GameCategory.Puzzle,
     slug: "minesweeper",
+    image: "/game-images/mines.png",
   },
   {
     emoji: "🐘",
@@ -486,6 +498,7 @@ export const games = [
     link: "/foof-game",
     category: GameCategory.Flash,
     slug: "foof-game",
+    image: "/game-images/foof.png",
   },
   {
     emoji: "🗺️",
@@ -495,6 +508,7 @@ export const games = [
     link: "/map-designer",
     category: GameCategory.Flash,
     slug: "map-designer",
+    image: "/game-images/map-design.png",
   },
   {
     emoji: "🏰",
@@ -504,14 +518,16 @@ export const games = [
     link: "/tower-defense",
     category: GameCategory.Flash,
     slug: "tower-defense",
+    image: "/game-images/tower-image.png",
   },
   {
     emoji: "🎄",
     title: "Christmas Game",
     description: "Christmas game",
-    link: "/live/christmas",
+    link: "/christmas",
     category: GameCategory.Powerpoint,
     slug: "christmas",
+    image: "/game-images/christmas.png",
   },
   {
     emoji: "🐣",
@@ -520,5 +536,6 @@ export const games = [
     link: "/happy-egg-maze",
     category: GameCategory.Powerpoint,
     slug: "happy-egg-maze",
+    image: "/game-images/blueprint.png",
   },
 ];
