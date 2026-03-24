@@ -1,5 +1,5 @@
 export const description = `
-- Loves making [apps](/projects), [artworks](/designs) and people smile
+- I love making [apps](/projects), [artworks](/designs) and people smile
 - Pescatarian, [cruciverbalist](https://crosshare.org/crosswords/vfN5qIXXAUb6rluYdGPH/break-a-leg) and [ornithophile](https://www.youtube.com/shorts/u-1EousPvG8)
 - Excited to work on impactful projects and go the extra mile
 - Get in touch at [hello@sciffany.com](mailto:hello@sciffany.com)
