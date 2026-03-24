@@ -372,6 +372,7 @@ export const games = [
     description: "Game of friendly similarities",
     tech: ["Nextjs", "TypeScript"],
     link: "https://samevibes.vercel.app/",
+    gh: "https://github.com/sciffany/samevibes",
     category: GameCategory.SocialGames,
     image: "/samevibes2.png",
     slug: "samevibes",
@@ -402,13 +403,15 @@ export const games = [
     description: "Nerdy trivia bot",
     tech: ["Telegram Bot", "Typescript"],
     link: "https://t.me/neatquizbot",
+    gh: "https://github.com/sciffany/neatquiz",
     category: GameCategory.Puzzle,
     slug: "neatquiz",
     image: "/game-images/neatquiz.png",
     longDescription:
       "NeatQuiz is a nerdy puzzle bot that tests your ability across different domains.",
-    why: "I'm inspired by quizarium, but wanted it to be more of a puzzle rather than trivia.",
+    why: "I'm inspired by Telgram's popular Quizarium bot, but wanted it to be more of a puzzle rather than trivia.",
     different: "It's not just trivia, it also involves puzzle-solving.",
+    graphics: "joezhuang @ vecteezy",
   },
   {
     emoji: "🧊",
@@ -416,6 +419,7 @@ export const games = [
     description: "Icebreaker bot",
     tech: ["Telegram Bot", "Typescript"],
     link: "https://t.me/icybreakerbot",
+    gh: "https://github.com/sciffany/icybreakerbot",
     category: GameCategory.SocialGames,
     slug: "icybreaker",
     image: "/game-images/icy.png",
@@ -438,6 +442,7 @@ export const games = [
       "Password is a clue-guessing word game where players guess the password based on single word clues provided by their team mate.",
     why: "It's a fun game that I often play with my family during gatherings, and I thought to share it with others.",
     different: "It challenges players to limit their clue-giving to one word",
+    challenge: "Implementing API for socket communication",
   },
   {
     emoji: "🔤",
@@ -468,6 +473,9 @@ export const games = [
     why: "I used to love Text Twist and Miniclip's Anagram Magic, but I didn't like solving for short words. I only wanted to find the longest word possible.",
     different:
       "It has 50 words at once, and you can toggle between them by pressing 1 and 2.",
+    challenge:
+      "Webscraping dataset, words chosen based on word frequency in English Language",
+    graphics: "HTML 5",
   },
   {
     emoji: "🌳",
@@ -498,6 +506,10 @@ export const games = [
     why: "Powerpets needed a graphic remake of their most popular game.",
     different:
       "It rewards players score-wise as well as visually and audibly when they match tiles.",
+    algo: "Recursive depth-first search to look for connected bubbles",
+    challenge:
+      "Consecutively popping groups of similar tiles as random tiles are filled downwards",
+    graphics: "powerpets.com",
   },
   {
     emoji: "🧱",
@@ -513,6 +525,9 @@ export const games = [
     why: "Powerpets wanted to make their mahjong solitaire game more engaging and customizable.",
     different:
       "I gave access to the powerpets team to customize the shape formed by the blocks, so they can create new levels and challenges.",
+    algo: "Linked list to relate tiles with all neighbouring tiles to update count of free tiles in O(1) time",
+    challenge: "Rendering 3D configuration of half-tiles",
+    graphics: "powerpets.com",
   },
   {
     emoji: "🎈",
@@ -528,6 +543,10 @@ export const games = [
     why: "This was one of the more addictive games on Powerpets",
     different:
       "It is your usual matching game but with characters popping out of the bubbles.",
+    algo: "Recursive depth-first search to look for connected bubbles",
+    challenge:
+      "Optimising the calculation of new bubble matrix when group of bubbles are removed",
+    graphics: "powerpets.com",
   },
   {
     emoji: "🎲",
@@ -538,6 +557,15 @@ export const games = [
     category: GameCategory.Powerpet,
     slug: "dicey-mice",
     image: "/game-images/dicey-image.png",
+    longDescription:
+      "Dicey Mice is a dice game where players roll dice and choose the best combination of dice to score points.",
+    why: "This is my favorite luck-based and strategy-based game on Powerpets",
+    different:
+      "It requires strategy to know which dice to store, and which combination to hit to get the highest score.",
+    algo: "Hash tables to store repeated score generated",
+    challenge:
+      "Learning Phaser with little documentation, finding out how to embed HTML inside, create animations from spritesheets",
+    graphics: "Adobe Photoshop (flat graphics), powerpets.com (mouse and dice)",
   },
   {
     emoji: "💣",
@@ -547,6 +575,18 @@ export const games = [
     category: GameCategory.Puzzle,
     slug: "minesweeper",
     image: "/game-images/mines.png",
+    longDescription:
+      "Minesweeper is a classic minesweeper game where players clear the board by clicking on tiles, avoiding mines.",
+    why: "I made this because I wanted to learn more about algorithms and data structures such as BFS. I also wanted to apply a tutorial I saw on C++ SFML.",
+    different:
+      "I made my own customized minesweeper that can have different skins.",
+    creds: "Coding Made Easy",
+    credsLink: "https://www.youtube.com/channel/UCas000yWtwjvFzD2zB9Nzmw",
+    algo: "Breadth-first search to look for blank tiles",
+    challenge:
+      "Figuring out the most optimal algorithm before learning Computer Science formally",
+    graphics: "MS Paint",
+    gh: "https://github.com/sciffany/Minesweeper",
   },
   {
     emoji: "🐘",
@@ -557,6 +597,15 @@ export const games = [
     category: GameCategory.Flash,
     slug: "foof",
     image: "/game-images/foof.png",
+    creds: "kirupa",
+    longDescription:
+      "Foof Game is an adventure game where players explore the world and collect items.",
+    why: "I made this because I wanted to learn more about Flash and ActionScript.",
+    different:
+      "The main character in the game was doodled in paint by my youngest sister, unknowingly turned into a character in the game.",
+    challenge:
+      "Camera panning to follow the character depending on where he is on map (near edge or still at center)",
+    graphics: "Adobe Photoshop, MS Paint",
   },
   {
     emoji: "🗺️",
@@ -567,6 +616,12 @@ export const games = [
     category: GameCategory.Flash,
     slug: "map-designer",
     image: "/game-images/map-design.png",
+    longDescription:
+      "Map Designer is a map editor where players can design their own maps for the Foof Game.",
+    why: "I made this because I wanted my Foof game to be highly customizable.",
+    different:
+      "It's more of a tool to help game makers create their own maps for the Foof Game.",
+    graphics: "Adobe Photoshop, MS Paint",
   },
   {
     emoji: "🏰",
@@ -577,6 +632,15 @@ export const games = [
     category: GameCategory.Flash,
     slug: "tower-defense",
     image: "/game-images/tower-image.png",
+    creds: "as3gametuts",
+    longDescription:
+      "Tower Defense is a tower defense game where players defend their base from enemies.",
+    why: "I made this as a gift for my brother on his birthday.",
+    different:
+      "It combines characters and powers from his two favorite worlds - Pokemon and Kingdom Hearts",
+    challenge:
+      "Mathematical calculations (pythagorean theorem) to determine if new enemy had entered the zone of a character",
+    graphics: "Adobe Flash, MS Paint",
   },
   {
     emoji: "🎄",
@@ -586,6 +650,16 @@ export const games = [
     category: GameCategory.Powerpoint,
     slug: "christmas",
     image: "/game-images/christmas.png",
+    longDescription:
+      "Christmas Game is a mouse-action game where players navigate a maze and avoid obstacles.",
+    why: "I made this as a gift for my classmates on Christmas.",
+    different:
+      "It's made entirely in MS Powerpoint, and uses animations and hyperlinks to create the game.",
+    algo: "Create reuseable elements",
+    challenge: "Gauging user progress as there are no variables in MS PPT",
+    graphics: "MS Powerpoint Custom Animations",
+    gh: "/downloads/christmas.ppt",
+    created: "December 2010",
   },
   {
     emoji: "🐣",
@@ -595,5 +669,13 @@ export const games = [
     category: GameCategory.Powerpoint,
     slug: "happy-egg-maze",
     image: "/game-images/blueprint.png",
+    longDescription:
+      "Happy Egg Maze is a maze game where players navigate a maze to find the eggs.",
+    why: "I wanted to see if MsPowerpoint could be used to to complex 3D FPS maze",
+    different:
+      "I planned out all the transitions using a blueprint, and hard coded everything in MS Powerpoint.",
+    algo: "Hard code everything!",
+    challenge: "I had to place every tile in the map in a separate slide",
+    graphics: "MS Paint",
   },
 ];

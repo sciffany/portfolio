@@ -3,6 +3,7 @@ import { poppins } from "../../lib/fonts";
 import "../../page.css";
 import { wp } from "@/app/lib/wp";
 import Breadcrumb from "../../components/breadcrumb";
+import BackButton from "../../components/back-button";
 import { getCategory } from "@/app/lib/utils";
 
 // Generate static params for all design slugs
@@ -71,6 +72,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     >
       <div className='bg-white/80 mx-6 lg:mx-48 my-10 pb-28'>
         <div className='mx-6 lg:mx-16 py-10'>
+          <BackButton />
           <Breadcrumb
             items={[
               { label: "Home", href: "/" },

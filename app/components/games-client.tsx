@@ -128,7 +128,7 @@ export default function GamesClient({
                       className="cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md"
                       onClick={(e) => {
                         e.stopPropagation();
-                        window.open(`/games/${game.slug}`, "_blank");
+                        router.push(`/games/${game.slug}`);
                       }}
                     >
                       Learn more
