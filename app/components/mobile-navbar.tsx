@@ -4,7 +4,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { isActiveNavPath, navbarItems, siteConfig } from "../lib/navbar-data";
+import {
+  isActiveNavPath,
+  NavItemType,
+  navbarItems,
+  siteConfig,
+} from "../lib/navbar-data";
 
 export default function MobileNavbar() {
   const pathname = usePathname();
@@ -112,6 +117,24 @@ export default function MobileNavbar() {
               <nav className="space-y-2">
                 {navbarItems.map((item, index) => {
                   const active = isActiveNavPath(pathname, item.href);
+                  const motionClass = isMenuOpen
+                    ? "opacity-100 translate-x-0"
+                    : "opacity-0 translate-x-4";
+                  const style = { transitionDelay: `${index * 100}ms` };
+                  if (item.type === NavItemType.Download) {
+                    return (
+                      <a
+                        key={item.href}
+                        href={item.href}
+                        download={item.downloadFilename}
+                        className={`block text-center rounded-lg text-lg py-3 transition-all duration-300 transform hover:scale-105 text-gray-900 font-medium hover:bg-gray-900 hover:text-white ${motionClass}`}
+                        style={style}
+                        onClick={closeMenu}
+                      >
+                        {item.label}
+                      </a>
+                    );
+                  }
                   return (
                     <Link
                       key={item.href}
@@ -120,14 +143,8 @@ export default function MobileNavbar() {
                         active
                           ? "bg-gray-900 text-white font-bold"
                           : "text-gray-900 font-medium hover:bg-gray-900 hover:text-white"
-                      } ${
-                        isMenuOpen
-                          ? "opacity-100 translate-x-0"
-                          : "opacity-0 translate-x-4"
-                      }`}
-                      style={{
-                        transitionDelay: `${index * 100}ms`,
-                      }}
+                      } ${motionClass}`}
+                      style={style}
                       aria-current={active ? "page" : undefined}
                       onClick={closeMenu}
                     >

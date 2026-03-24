@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import "../page.css";
-import { DesignCategory } from "../lib/data";
+import { siteConfig } from "../lib/navbar-data";
 import { poppins } from "../lib/fonts";
 
 export const metadata: Metadata = {
@@ -93,6 +93,14 @@ export default function AboutPage() {
             >
               get in touch
             </Link>
+            . You can also{" "}
+            <a
+              className="text-emerald-700 font-semibold"
+              href={siteConfig.resume.href}
+              download={siteConfig.resume.downloadFilename}
+            >
+              download my resume
+            </a>
             .
           </p>
         </div>

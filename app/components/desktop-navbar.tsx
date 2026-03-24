@@ -3,7 +3,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { isActiveNavPath, navbarItems, siteConfig } from "../lib/navbar-data";
+import {
+  isActiveNavPath,
+  NavItemType,
+  navbarItems,
+  siteConfig,
+} from "../lib/navbar-data";
 
 export default function DesktopNavbar() {
   const pathname = usePathname();
@@ -26,6 +31,18 @@ export default function DesktopNavbar() {
       <div className='flex items-center space-x-6 text-sm'>
         {navbarItems.map((item) => {
           const active = isActiveNavPath(pathname, item.href);
+          if (item.type === NavItemType.Download) {
+            return (
+              <a
+                key={item.href}
+                href={item.href}
+                download={item.downloadFilename}
+                className='text-gray-800 hover:text-black text-lg'
+              >
+                {item.label}
+              </a>
+            );
+          }
           return (
             <Link
               key={item.href}

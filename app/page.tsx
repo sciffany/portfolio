@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import "./page.css";
 import Image from "next/image";
 import { poppins } from "./lib/fonts";
-import { description } from "./lib/data";
+import { description, keyProjects } from "./lib/data";
 import ReactMarkdown from "react-markdown";
 
 export const metadata: Metadata = {
@@ -46,16 +46,23 @@ export default function Home() {
             <div className='p-5 flex flex-col text-black pt-2'>
               <ReactMarkdown
                 components={{
-                  a: ({ href, children }) => (
-                    <a
-                      className='text-emerald-700 font-semibold'
-                      href={href}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      {children}
-                    </a>
-                  ),
+                  a: ({ href, children }) => {
+                    const isInternalHash = href?.startsWith("#");
+                    return (
+                      <a
+                        className='text-emerald-700 font-semibold'
+                        href={href}
+                        {...(isInternalHash
+                          ? {}
+                          : {
+                              target: "_blank",
+                              rel: "noopener noreferrer",
+                            })}
+                      >
+                        {children}
+                      </a>
+                    );
+                  },
                   ol: ({ children }) => (
                     <ol className='list-decimal pl-5 mt-2'>{children}</ol>
                   ),
@@ -68,6 +75,59 @@ export default function Home() {
               </ReactMarkdown>
             </div>
           </article>
+        </div>
+      </section>
+
+      <section
+        className='starfield w-full py-16 lg:py-20 text-white bg-gradient-to-b from-slate-900 to-emerald-950'
+        aria-labelledby='key-projects-heading'
+      >
+        <div className='mx-6 lg:mx-auto lg:max-w-6xl'>
+          <h2
+            id='key-projects-heading'
+            className='scroll-mt-24 text-2xl lg:text-3xl font-bold text-center mb-10 lg:mb-12'
+          >
+            Key projects
+          </h2>
+          <ul className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 list-none p-0 m-0'>
+            {keyProjects.map((project) => (
+              <li key={project.id}>
+                <a
+                  href={project.href}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='group flex flex-col h-full bg-white rounded-xl overflow-hidden shadow-lg transition hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400'
+                >
+                  <div className='relative h-36 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center shrink-0'>
+                    {"image" in project && project.image ? (
+                      <Image
+                        src={project.image}
+                        alt=''
+                        width={400}
+                        height={200}
+                        className='absolute inset-0 w-full h-full object-cover'
+                      />
+                    ) : (
+                      <span
+                        className='text-5xl relative z-[1]'
+                        aria-hidden
+                      >
+                        {project.emoji}
+                      </span>
+                    )}
+                  </div>
+                  <div className='flex flex-col flex-1 text-center bg-gradient-to-r from-emerald-950 to-gray-900 text-white p-4 gap-1'>
+                    <span className='text-lg font-semibold group-hover:underline underline-offset-2'>
+                      {project.title}
+                    </span>
+                    <span className='text-sm text-emerald-400/95'>
+                      {project.subtitle}
+                    </span>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </div>

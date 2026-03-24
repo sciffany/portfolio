@@ -1,7 +1,7 @@
 export const description = `
 - I love making [apps](/projects), [artworks](/designs) and people smile
 - Pescatarian, [cruciverbalist](https://crosshare.org/crosswords/vfN5qIXXAUb6rluYdGPH/break-a-leg) and [ornithophile](https://www.youtube.com/shorts/u-1EousPvG8)
-- Excited to work on impactful projects and go the extra mile
+- Excited to work on [impactful projects](#key-projects-heading) and go the extra mile
 - Get in touch at [hello@sciffany.com](mailto:hello@sciffany.com)
 `;
 
@@ -155,6 +155,46 @@ export const DESIGN_CATEGORIES: readonly DesignCategory[] = [
   DesignCategory.Drawings,
   DesignCategory.Physical,
 ];
+
+export enum KeyProjectId {
+  TakeApp = "take-app",
+  StaffAnyWebTimeclock = "staffany-web-timeclock",
+  Lingosaurus = "lingosaurus",
+  NeatQuiz = "neatquiz",
+}
+
+export const keyProjects = [
+  {
+    id: KeyProjectId.TakeApp,
+    title: "Take App",
+    subtitle: "Software Engineer",
+    href: "https://take.app/",
+    emoji: "🛍️",
+  },
+  {
+    id: KeyProjectId.StaffAnyWebTimeclock,
+    title: "StaffAny",
+    subtitle: "Web Timeclock",
+    href: "https://www.staffany.com/",
+    emoji: "⏰",
+  },
+  {
+    id: KeyProjectId.Lingosaurus,
+    title: "Lingosaurus",
+    subtitle: "Learn Tagalog and Korean",
+    href: "https://lingosaurus.vercel.app/",
+    emoji: "🦕",
+    image: "/lingosaurus.png",
+  },
+  {
+    id: KeyProjectId.NeatQuiz,
+    title: "NeatQuiz",
+    subtitle: "Nerdy trivia bot",
+    href: "https://t.me/neatquizbot",
+    emoji: "🪐",
+    image: "/game-images/neatquiz.png",
+  },
+] as const;
 
 export enum ProjectCategory {
   Utilities = "Utilities",

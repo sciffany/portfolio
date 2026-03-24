@@ -24,6 +24,13 @@ export default function Footer() {
             >
               {siteConfig.email}
             </a>
+            <a
+              href={siteConfig.resume.href}
+              download={siteConfig.resume.downloadFilename}
+              className='text-emerald-300 hover:text-emerald-200 text-sm font-medium transition-colors duration-200 underline underline-offset-2'
+            >
+              Download resume
+            </a>
           </div>
 
           <div className='flex flex-col items-center md:items-end space-y-4'>

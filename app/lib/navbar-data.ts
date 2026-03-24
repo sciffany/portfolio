@@ -1,7 +1,21 @@
+export enum NavItemType {
+  Page = "page",
+  Download = "download",
+}
+
 export interface NavItem {
   href: string;
   label: string;
+  type?: NavItemType;
+  /** Used with NavItemType.Download for the suggested filename. */
+  downloadFilename?: string;
 }
+
+/** Add your PDF as `public/resume.pdf` (or update `href`). */
+export const RESUME = {
+  href: "/resume.pdf",
+  downloadFilename: "Tiffany-Sia-Chong-Resume.pdf",
+} as const;
 
 /** True when `pathname` is exactly `href` or a nested route (e.g. /projects/foo). */
 export function isActiveNavPath(pathname: string, href: string): boolean {
@@ -29,12 +43,19 @@ export const navbarItems: NavItem[] = [
     href: "/designs",
     label: "Designs",
   },
+  {
+    href: RESUME.href,
+    label: "Resume",
+    type: NavItemType.Download,
+    downloadFilename: RESUME.downloadFilename,
+  },
 ];
 
 export const siteConfig = {
   name: "Tiffany Sia Chong",
   logo: "/logo_white.png",
   email: "hello@sciffany.com",
+  resume: RESUME,
   social: {
     github: "https://github.com/sciffany",
     linkedin: "https://linkedin.com/in/sciffany",
