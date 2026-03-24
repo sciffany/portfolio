@@ -61,16 +61,16 @@ export default function DesignClient({
 
   return (
     <nav
-      aria-label='Design categories'
-      className='flex justify-center mt-8 flex-col'
+      aria-label="Design categories"
+      className="flex justify-center mt-8 flex-col"
     >
-      <ul className='flex flex-wrap items-center justify-center gap-3  text-sm lg:text-base font-medium text-slate-700'>
+      <ul className="flex flex-wrap items-center justify-center gap-3  text-sm lg:text-base font-medium text-slate-700">
         {DESIGN_CATEGORIES.map((category: DesignCategory) => {
           const isActive = selectedCategory === category;
           return (
             <li key={category}>
               <button
-                type='button'
+                type="button"
                 onClick={() => handleCategoryClick(category)}
                 className={`px-3 py-1 rounded-full border transition ${
                   isActive
@@ -85,7 +85,7 @@ export default function DesignClient({
         })}
       </ul>
 
-      <div className='mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6 mb-14'>
+      <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6 mb-14">
         {filteredDesigns.map((design) => {
           const image = design["content:encoded"]
             .match(/<img[^>]+src="([^">]+)"/)?.[1]
@@ -102,34 +102,34 @@ export default function DesignClient({
           return (
             <figure
               key={slug}
-              className='group rounded-xl overflow-hidden bg-white transition'
+              className="group rounded-xl overflow-hidden bg-white transition"
             >
               <a
                 href={`/designs/${slug}`}
-                rel='noopener noreferrer'
+                rel="noopener noreferrer"
                 aria-label={`Open ${design.title}`}
               >
-                <div className='relative h-[200px]'>
+                <div className="relative h-[200px]">
                   {image ? (
                     <Image
                       src={`/wp-media/${image}`}
                       alt={design.title}
                       fill
-                      sizes='(min-width: 1024px) 33vw, 100vw'
-                      className='object-cover'
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover"
                     />
                   ) : (
                     <iframe
                       src={`https://www.youtube.com/embed/${video}`}
-                      className='object-cover w-full h-full absolute inset-0'
+                      className="object-cover w-full h-full absolute inset-0"
                     />
                   )}
                   <div
                     aria-hidden
-                    className='absolute inset-0 bg-white opacity-0 transition-opacity duration-200 group-hover:opacity-30'
+                    className="absolute inset-0 bg-white opacity-0 transition-opacity duration-200 group-hover:opacity-30"
                   />
                 </div>
-                <figcaption className='text-md text-center text-black py-2 px-2'>
+                <figcaption className="text-md text-center text-black py-2 px-2">
                   {design.title}
                 </figcaption>
               </a>
