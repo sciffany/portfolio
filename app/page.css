@@ -115,36 +115,17 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  /* Multiple repeating layers of small radial gradients to simulate stars */
-  background: radial-gradient(
-        8px 8px at 20px 30px,
-        rgba(255, 255, 255, 0.9),
-        rgba(255, 255, 255, 0) 45%
-      )
+  /* Repeating SVG five-point stars (same tile sizes/offsets as prior radial dots) */
+  background:
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjQwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMCwzMCkgc2NhbGUoMC4wNzUpIHRyYW5zbGF0ZSgtNTAsLTUwKSI+PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjkiIGQ9Ik01MCA1IEw2MSAzOCBMOTggMzggTDY4IDU5IEw3OSA5NSBMNTAgNzMgTDIxIDk1IEwzMiA1OSBMMiAzOCBMMzkgMzggWiIvPjwvZz48L3N2Zz4=")
       0 0/240px 240px repeat,
-    radial-gradient(
-        6px 6px at 100px 150px,
-        rgba(255, 255, 255, 0.85),
-        rgba(255, 255, 255, 0) 45%
-      )
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzAwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDAsMTUwKSBzY2FsZSgwLjA1NikgdHJhbnNsYXRlKC01MCwtNTApIj48cGF0aCBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuODUiIGQ9Ik01MCA1IEw2MSAzOCBMOTggMzggTDY4IDU5IEw3OSA5NSBMNTAgNzMgTDIxIDk1IEwzMiA1OSBMMiAzOCBMMzkgMzggWiIvPjwvZz48L3N2Zz4=")
       0 0/300px 300px repeat,
-    radial-gradient(
-        4px 4px at 130px 80px,
-        rgba(255, 255, 255, 0.75),
-        rgba(255, 255, 255, 0) 45%
-      )
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzAsODApIHNjYWxlKDAuMDQpIHRyYW5zbGF0ZSgtNTAsLTUwKSI+PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjc1IiBkPSJNNTAgNSBMNjEgMzggTDk4IDM4IEw2OCA1OSBMNzkgOTUgTDUwIDczIEwyMSA5NSBMMzIgNTkgTDIgMzggTDM5IDM4IFoiLz48L2c+PC9zdmc+")
       0 0/220px 220px repeat,
-    radial-gradient(
-        4px 4px at 60px 120px,
-        rgba(255, 255, 255, 0.65),
-        rgba(255, 255, 255, 0) 45%
-      )
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMjgwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCwxMjApIHNjYWxlKDAuMDQpIHRyYW5zbGF0ZSgtNTAsLTUwKSI+PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjY1IiBkPSJNNTAgNSBMNjEgMzggTDk4IDM4IEw2OCA1OSBMNzkgOTUgTDUwIDczIEwyMSA5NSBMMzIgNTkgTDIgMzggTDM5IDM4IFoiLz48L2c+PC9zdmc+")
       0 0/280px 280px repeat,
-    radial-gradient(
-        12px 12px at 160px 40px,
-        rgba(255, 255, 255, 0.5),
-        rgba(255, 255, 255, 0) 40%
-      )
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNTAgMzUwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjAsNDApIHNjYWxlKDAuMTEpIHRyYW5zbGF0ZSgtNTAsLTUwKSI+PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjUiIGQ9Ik01MCA1IEw2MSAzOCBMOTggMzggTDY4IDU5IEw3OSA5NSBMNTAgNzMgTDIxIDk1IEwzMiA1OSBMMiAzOCBMMzkgMzggWiIvPjwvZz48L3N2Zz4=")
       0 0/350px 350px repeat;
   animation: twinkle 8s ease-in-out infinite;
   opacity: 0.6;

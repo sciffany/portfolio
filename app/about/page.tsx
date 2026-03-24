@@ -81,6 +81,13 @@ export default function AboutPage() {
             including volunteer welfare organisations.
           </p>
           <p className="text-lg leading-relaxed">
+            <b>During my free time</b>
+          </p>
+          <p className="text-lg leading-relaxed">
+            Away from projects and deadlines, I love playing harmonica and
+            hanging out with my friends.
+          </p>
+          <p className="text-lg leading-relaxed">
             <b>Contact Me</b>
           </p>
           <p className="text-lg leading-relaxed">
