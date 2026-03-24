@@ -386,16 +386,7 @@ export const games = [
     image: "/demo.png",
     slug: "sparky-nature",
   },
-  {
-    emoji: "🧩",
-    title: "Tell Me a Story",
-    description: "Puzzle hunt game",
-    tech: ["Django"],
-    link: "https://sciffany.pythonanywhere.com/puzzle/tell-me-a-story",
-    category: GameCategory.Puzzle,
-    slug: "tell-me-a-story",
-    image: "/game-images/story.png",
-  },
+
   {
     emoji: "🪐",
     title: "NeatQuiz",
