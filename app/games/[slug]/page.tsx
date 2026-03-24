@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { poppins } from "../../lib/fonts";
-import { games, projects } from "../../lib/data";
+import { games } from "../../lib/data";
 import Image from "next/image";
 import "../../page.css";
 import Breadcrumb from "../../components/breadcrumb";
@@ -42,7 +42,7 @@ export async function generateMetadata({
   };
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
+export default function GamePage({ params }: { params: { slug: string } }) {
   const game = games.find((g) => g.slug === params.slug);
   return (
     <section
@@ -83,7 +83,28 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               />
             )}
           </div>
-          <div className='flex flex-col gap-4'></div>
+          <div className='flex flex-col gap-4'>
+            <p className='text-black'>
+              <b>What is it?</b>
+              <br />
+              {game?.longDescription}
+            </p>
+            <p className='text-black'>
+              <b>Why did I make this?</b>
+              <br />
+              {game?.why}
+            </p>
+            <p className='text-black'>
+              <b>How is it different?</b>
+              <br />
+              {game?.different}
+            </p>
+            <p className='text-black'>
+              <b>Tech stack:</b>
+              <br />
+              {game?.tech?.join(", ")}
+            </p>
+          </div>
         </div>
         <div className='flex justify-center my-10'>
           <a href={game?.link} target='_blank' rel='noopener noreferrer'>

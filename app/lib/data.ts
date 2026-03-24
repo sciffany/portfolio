@@ -375,6 +375,10 @@ export const games = [
     category: GameCategory.SocialGames,
     image: "/samevibes2.png",
     slug: "samevibes",
+    longDescription: "samevibes is a game of friendly similarities.",
+    why: "I made this because I realized that there could be so many permutations of ways to divide my family and friend group based on certain similarities.",
+    different:
+      "It requires players to think out-of-the-box to find similar traits amongst particular family and friends.",
   },
   {
     emoji: "🌿",
@@ -385,6 +389,11 @@ export const games = [
     category: GameCategory.RPG,
     image: "/demo.png",
     slug: "sparky-nature",
+    longDescription:
+      "Sparky Nature is a farming RPG where you grow crops and animals to earn money.",
+    why: "I made this because I've always loved playing farming games as well as city builders. I wanted to see if I can design classes and systems for complex games.",
+    different:
+      "It's not just farming, it also involves building relationships with the townsfolk.",
   },
 
   {
@@ -396,6 +405,10 @@ export const games = [
     category: GameCategory.Puzzle,
     slug: "neatquiz",
     image: "/game-images/neatquiz.png",
+    longDescription:
+      "NeatQuiz is a nerdy puzzle bot that tests your ability across different domains.",
+    why: "I'm inspired by quizarium, but wanted it to be more of a puzzle rather than trivia.",
+    different: "It's not just trivia, it also involves puzzle-solving.",
   },
   {
     emoji: "🧊",
@@ -406,6 +419,11 @@ export const games = [
     category: GameCategory.SocialGames,
     slug: "icybreaker",
     image: "/game-images/icy.png",
+    longDescription:
+      "IcyBreaker is a icebreaker bot that helps you break the ice with your friends.",
+    why: "I wanted to get to know my friends, colleagues, band mates, and acquaintances better..",
+    different:
+      "It asks questions randomly directed at one of the participants in the game, and people get to guess their answers instead of just hearing the answer.",
   },
   {
     emoji: "🔒",
@@ -416,6 +434,10 @@ export const games = [
     category: GameCategory.SocialGames,
     slug: "password",
     image: "/game-images/password.png",
+    longDescription:
+      "Password is a clue-guessing word game where players guess the password based on single word clues provided by their team mate.",
+    why: "It's a fun game that I often play with my family during gatherings, and I thought to share it with others.",
+    different: "It challenges players to limit their clue-giving to one word",
   },
   {
     emoji: "🔤",
@@ -426,6 +448,11 @@ export const games = [
     category: GameCategory.SocialGames,
     slug: "passwordle",
     image: "/game-images/passwordle.png",
+    longDescription:
+      "Passwordle is another word-guessing game where players guess subwords inside a long word, as clued by AI",
+    why: "This is another game inspired by my family gatherings where we shuffle a long word into shorter sub words.",
+    different:
+      "It involves both anagramming skills as well as crossword-like skills.",
   },
   {
     emoji: "🔤",
@@ -436,6 +463,11 @@ export const games = [
     category: GameCategory.Puzzle,
     slug: "entropius-anagram",
     image: "/game-images/anagram.png",
+    longDescription:
+      "Entropius Anagram is an anagram word game where players unscramble letters into valid words.",
+    why: "I used to love Text Twist and Miniclip's Anagram Magic, but I didn't like solving for short words. I only wanted to find the longest word possible.",
+    different:
+      "It has 50 words at once, and you can toggle between them by pressing 1 and 2.",
   },
   {
     emoji: "🌳",
@@ -446,6 +478,11 @@ export const games = [
     category: GameCategory.Puzzle,
     slug: "forest-duel",
     image: "/game-images/forest-duel.png",
+    longDescription:
+      "Forest Duel is a gamified flashcard where players fight the other animals by answering questions eg multiplication tables.",
+    why: "I wanted my nephew to learn multiplication tables in a fun way.",
+    different:
+      "It gamifies the tedious task of learning multiplication tables.",
   },
   {
     emoji: "🐶",
@@ -456,6 +493,11 @@ export const games = [
     category: GameCategory.Powerpet,
     slug: "mini-match",
     image: "/game-images/minimatch-image.png",
+    longDescription:
+      "Mini Match is a match game where players match tiles of the same type by swapping them.",
+    why: "Powerpets needed a graphic remake of their most popular game.",
+    different:
+      "It rewards players score-wise as well as visually and audibly when they match tiles.",
   },
   {
     emoji: "🧱",
@@ -466,6 +508,11 @@ export const games = [
     category: GameCategory.Powerpet,
     slug: "bubbas-blocks",
     image: "/game-images/bubbas-image.png",
+    longDescription:
+      "Bubbas' Blocks is a block removing game where players remove blocks of the same type",
+    why: "Powerpets wanted to make their mahjong solitaire game more engaging and customizable.",
+    different:
+      "I gave access to the powerpets team to customize the shape formed by the blocks, so they can create new levels and challenges.",
   },
   {
     emoji: "🎈",
@@ -476,6 +523,11 @@ export const games = [
     category: GameCategory.Powerpet,
     slug: "mini-bubbles",
     image: "/game-images/minibubbles-image.png",
+    longDescription:
+      "Mini Bubbles is a bubble popping game where players pop bubbles of the same color",
+    why: "This was one of the more addictive games on Powerpets",
+    different:
+      "It is your usual matching game but with characters popping out of the bubbles.",
   },
   {
     emoji: "🎲",
