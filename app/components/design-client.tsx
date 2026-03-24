@@ -12,7 +12,7 @@ import { getCategory } from "../lib/utils";
 export default function DesignClient({
   searchParams,
 }: {
-  searchParams: { category: DesignCategory };
+  searchParams: { category?: DesignCategory };
 }) {
   const router = useRouter();
   const pathname = usePathname();
@@ -23,7 +23,10 @@ export default function DesignClient({
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
+      const params = new URLSearchParams();
+      if (searchParams.category) {
+        params.set("category", searchParams.category);
+      }
       if (value) {
         params.set(name, value);
       } else {
@@ -31,7 +34,7 @@ export default function DesignClient({
       }
       return params.toString();
     },
-    [searchParams]
+    [searchParams.category]
   );
 
   const handleCategoryClick = (category: DesignCategory) => {

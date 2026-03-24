@@ -9,27 +9,14 @@ import { useRouter } from "next/navigation";
 export default function ProjectsClient({
   searchParams,
 }: {
-  searchParams: { category: ProjectCategory };
+  searchParams: { category?: ProjectCategory };
 }) {
   const router = useRouter();
   const selectedCategory = searchParams.category || null;
-  const [modalProject, setModalProject] = useState<
-    (typeof projects)[number] | null
-  >(null);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [activeProjectSlug, setActiveProjectSlug] = useState<string | null>(
     null
   );
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setModalProject(null);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
 
   useEffect(() => {
     const detectTouch = () => {
@@ -52,19 +39,19 @@ export default function ProjectsClient({
     <section
       className={`${poppins.className} starfield w-full text-white bg-gradient-to-br from-emerald-800 to-slate-900 flex flex-col space-y-10`}
     >
-      <div className='bg-white/80 mx-6 lg:mx-48'>
-        <div className='mx-6 lg:mx-16 py-10'>
-          <h1 className='text-3xl font-bold text-center text-black'>
-            ༺ Projects ༻
+      <div className="bg-white/80 mx-6 lg:mx-48 my-10">
+        <div className="mx-6 lg:mx-16 py-10">
+          <h1 className="text-3xl font-bold text-center text-black">
+            Projects
           </h1>
           <nav
-            aria-label='Project categories'
-            className='flex justify-center mt-8'
+            aria-label="Project categories"
+            className="flex justify-center mt-8"
           >
-            <ul className='flex flex-wrap items-center justify-center gap-3 text-sm lg:text-base font-medium text-slate-700'>
-              <li key='All'>
+            <ul className="flex flex-wrap items-center justify-center gap-3 text-sm lg:text-base font-medium text-slate-700">
+              <li key="All">
                 <button
-                  type='button'
+                  type="button"
                   onClick={() => router.push("/projects")}
                   className={`px-3 py-1 rounded-full border transition ${
                     selectedCategory === null
@@ -78,7 +65,7 @@ export default function ProjectsClient({
               {PROJECT_CATEGORIES.map((category) => (
                 <li key={category}>
                   <button
-                    type='button'
+                    type="button"
                     onClick={() =>
                       router.push(`/projects?category=${category}`)
                     }
@@ -100,7 +87,7 @@ export default function ProjectsClient({
             {filteredProjects.map((project) => (
               <article
                 key={`${project.title}`}
-                className='relative group bg-white rounded-lg w-full flex flex-col overflow-hidden transition'
+                className="relative group bg-white rounded-lg w-full flex flex-col overflow-hidden transition"
                 onClick={() => {
                   if (isTouchDevice) {
                     setActiveProjectSlug((current) =>
@@ -109,10 +96,10 @@ export default function ProjectsClient({
                   }
                 }}
               >
-                <div className='text-xl font-semibold  bg-gray-900 h-[150px]'>
+                <div className="text-xl font-semibold  bg-gray-900 h-[150px]">
                   {project.image && (
                     <Image
-                      className='inset-shadow-lg'
+                      className="inset-shadow-lg"
                       src={`${project.image}`}
                       alt={project.title}
                       width={300}
@@ -125,12 +112,12 @@ export default function ProjectsClient({
                     />
                   )}
                 </div>
-                <div className='flex flex-col gap-2 text-center'>
-                  <div className='text-xl flex flex-col font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 p-4 text-white flex'>
-                    <div className='text-xl'>{project.emoji}</div>
-                    <div className='text-lg'>{project.title}</div>
+                <div className="flex flex-col gap-2 text-center">
+                  <div className="text-xl flex flex-col font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 p-4 text-white flex">
+                    <div className="text-xl">{project.emoji}</div>
+                    <div className="text-lg">{project.title}</div>
                   </div>
-                  <h3 className='text-md text-black p-4 pt-2'>
+                  <h3 className="text-md text-black p-4 pt-2">
                     {project.description}
                   </h3>
                 </div>
@@ -141,10 +128,10 @@ export default function ProjectsClient({
                       : "opacity-0 pointer-events-none"
                   } lg:group-hover:opacity-100 lg:group-hover:pointer-events-auto transition-opacity duration-200 flex items-center justify-center`}
                 >
-                  <div className='text-center flex flex-col gap-4 space-y-2 text-gray-900'>
+                  <div className="text-center flex flex-col gap-4 space-y-2 text-gray-900">
                     <button
-                      type='button'
-                      className='cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md'
+                      type="button"
+                      className="cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md"
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(`/projects/${project.slug}`, "_blank");
@@ -153,7 +140,7 @@ export default function ProjectsClient({
                       Learn more
                     </button>
                     <button
-                      className='cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md'
+                      className="cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md"
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(project.link, "_blank");

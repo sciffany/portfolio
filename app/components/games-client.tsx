@@ -9,25 +9,12 @@ import { useRouter } from "next/navigation";
 export default function GamesClient({
   searchParams,
 }: {
-  searchParams: { category: GameCategory };
+  searchParams: { category?: GameCategory };
 }) {
   const router = useRouter();
   const selectedCategory = searchParams.category || null;
-  const [modalGame, setModalGame] = useState<(typeof games)[number] | null>(
-    null
-  );
   const [isTouchDevice, setIsTouchDevice] = useState(false);
   const [activeGameSlug, setActiveGameSlug] = useState<string | null>(null);
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setModalGame(null);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
 
   useEffect(() => {
     const detectTouch = () => {
@@ -50,19 +37,17 @@ export default function GamesClient({
     <section
       className={`${poppins.className} starfield w-full text-white bg-gradient-to-br from-emerald-800 to-slate-900 flex flex-col space-y-10`}
     >
-      <div className='bg-white/80 mx-6 lg:mx-48'>
-        <div className='mx-6 lg:mx-16 py-10'>
-          <h1 className='text-3xl font-bold text-center text-black'>
-            ༺ Games ༻
-          </h1>
+      <div className="bg-white/80 mx-6 lg:mx-48 my-10">
+        <div className="mx-6 lg:mx-16 py-10">
+          <h1 className="text-3xl font-bold text-center text-black">Games</h1>
           <nav
-            aria-label='Game categories'
-            className='flex justify-center mt-8'
+            aria-label="Game categories"
+            className="flex justify-center mt-8"
           >
-            <ul className='flex flex-wrap items-center justify-center gap-3 text-sm lg:text-base font-medium text-slate-700'>
-              <li key='All'>
+            <ul className="flex flex-wrap items-center justify-center gap-3 text-sm lg:text-base font-medium text-slate-700">
+              <li key="All">
                 <button
-                  type='button'
+                  type="button"
                   onClick={() => router.push("/games")}
                   className={`px-3 py-1 rounded-full border transition ${
                     selectedCategory === null
@@ -76,7 +61,7 @@ export default function GamesClient({
               {Object.values(GameCategory).map((category) => (
                 <li key={category}>
                   <button
-                    type='button'
+                    type="button"
                     onClick={() => router.push(`/games?category=${category}`)}
                     className={`px-3 py-1 rounded-full border transition ${
                       selectedCategory === category
@@ -96,7 +81,7 @@ export default function GamesClient({
             {filteredGames.map((game) => (
               <article
                 key={`${game.title}`}
-                className='relative group bg-white rounded-lg w-full flex flex-col overflow-hidden transition'
+                className="relative group bg-white rounded-lg w-full flex flex-col overflow-hidden transition"
                 onClick={() => {
                   if (isTouchDevice) {
                     setActiveGameSlug((current) =>
@@ -105,10 +90,10 @@ export default function GamesClient({
                   }
                 }}
               >
-                <div className='text-xl font-semibold  bg-gray-900 h-[150px]'>
+                <div className="text-xl font-semibold  bg-gray-900 h-[150px]">
                   {game.image && (
                     <Image
-                      className='inset-shadow-lg'
+                      className="inset-shadow-lg"
                       src={`${game.image}`}
                       alt={game.title}
                       width={300}
@@ -121,12 +106,12 @@ export default function GamesClient({
                     />
                   )}
                 </div>
-                <div className='flex flex-col gap-2 text-center'>
-                  <div className='text-xl flex flex-col font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 p-4 text-white flex'>
-                    <div className='text-xl'>{game.emoji}</div>
-                    <div className='text-lg'>{game.title}</div>
+                <div className="flex flex-col gap-2 text-center">
+                  <div className="text-xl flex flex-col font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 p-4 text-white flex">
+                    <div className="text-xl">{game.emoji}</div>
+                    <div className="text-lg">{game.title}</div>
                   </div>
-                  <h3 className='text-md text-black p-4 pt-2'>
+                  <h3 className="text-md text-black p-4 pt-2">
                     {game.description}
                   </h3>
                 </div>
@@ -137,10 +122,10 @@ export default function GamesClient({
                       : "opacity-0 pointer-events-none"
                   } lg:group-hover:opacity-100 lg:group-hover:pointer-events-auto transition-opacity duration-200 flex items-center justify-center`}
                 >
-                  <div className='text-center flex flex-col gap-4 space-y-2 text-gray-900'>
+                  <div className="text-center flex flex-col gap-4 space-y-2 text-gray-900">
                     <button
-                      type='button'
-                      className='cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md'
+                      type="button"
+                      className="cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md"
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(`/games/${game.slug}`, "_blank");
@@ -149,7 +134,7 @@ export default function GamesClient({
                       Learn more
                     </button>
                     <button
-                      className='cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md'
+                      className="cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md"
                       onClick={(e) => {
                         e.stopPropagation();
                         window.open(game.link, "_blank");

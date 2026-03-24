@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import { navbarItems, siteConfig } from "../lib/navbar-data";
+import { usePathname } from "next/navigation";
+import { isActiveNavPath, navbarItems, siteConfig } from "../lib/navbar-data";
 
 export default function DesktopNavbar() {
+  const pathname = usePathname();
+
   return (
     <nav className='mx-4 sm:mx-6 lg:mx-48 p-6 h-16 flex items-center justify-between'>
       <Link
@@ -19,15 +24,21 @@ export default function DesktopNavbar() {
         {siteConfig.name}
       </Link>
       <div className='flex items-center space-x-6 text-sm'>
-        {navbarItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className='text-gray-800 hover:text-black text-lg'
-          >
-            {item.label}
-          </Link>
-        ))}
+        {navbarItems.map((item) => {
+          const active = isActiveNavPath(pathname, item.href);
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`text-gray-800 hover:text-black text-lg ${
+                active ? "font-bold" : ""
+              }`}
+              aria-current={active ? "page" : undefined}
+            >
+              {item.label}
+            </Link>
+          );
+        })}
       </div>
     </nav>
   );

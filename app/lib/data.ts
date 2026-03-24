@@ -1,5 +1,5 @@
 export const description = `
-- Loves making [apps](/projects), [artworks](/design) and people smile
+- Loves making [apps](/projects), [artworks](/designs) and people smile
 - Pescatarian, [cruciverbalist](https://crosshare.org/crosswords/vfN5qIXXAUb6rluYdGPH/break-a-leg) and [ornithophile](https://www.youtube.com/shorts/u-1EousPvG8)
 - Excited to work on impactful projects and go the extra mile
 - Get in touch at [hello@sciffany.com](mailto:hello@sciffany.com)
@@ -18,12 +18,10 @@ export const experiences = [
     date: "May 2023 - Present",
     link: "https://take.app/",
     description: [
-      "Led product decisions with the team",
-      "Built core e-commerce features end to end",
+      "Built core e-commerce features end-to-end",
       "Integrated multiple payment methods",
-      "Launched map-based delivery",
-      "Implemented scheduling features",
-      "Shipped an analytics dashboard",
+      "Implemented delivery and scheduling features",
+      "Optimized data transfer across services",
     ],
     tech: ["Next.js", "TypeScript"],
     category: ExperienceCategory.Software_Engineer,
@@ -32,7 +30,9 @@ export const experiences = [
     title: "Apple",
     role: "Web Engineer, Reliability Engineering Team",
     date: "July 2020 - August 2020",
-    description: ["Built web tools to improve reliability"],
+    description: [
+      "Built backend and frontend for web tools used by Apple's reliability engineering team",
+    ],
     tech: ["Ember.js", "Ruby on Rails", "PostgreSQL"],
     link: "https://www.apple.com/",
     category: ExperienceCategory.Software_Engineer,
@@ -42,8 +42,8 @@ export const experiences = [
     role: "Software Engineer Intern",
     date: "May 2021 - August 2021",
     description: [
-      "Implemented map features for runners",
-      "Developed a social network for sports",
+      "Built social and map features for a sports social network in React Native",
+      "Integrated GraphQL, Mapbox, and Getstream",
     ],
     tech: ["React Native", "GraphQL", "Mapbox", "Getstream"],
     category: ExperienceCategory.Software_Engineer,
@@ -53,7 +53,8 @@ export const experiences = [
     role: "Student Researcher",
     date: "May 2020 - July 2020",
     description: [
-      "Built a visual-novel engine to teach introductory programming",
+      "Co-architected a visual novel game engine for teaching introductory programming",
+      "Shipped the platform for CS1101S for a cohort of 700+ students",
     ],
     tech: ["Phaser", "React"],
     category: ExperienceCategory.Software_Engineer,
@@ -63,7 +64,9 @@ export const experiences = [
     role: "Fullstack Software Engineer",
     date: "November 2019 - January 2020",
     description: [
-      "Developed a web timeclock used by thousands across the country",
+      "Delivered Web Timeclock (Node.js, React, TypeScript) from prototype through testing to production",
+      "Scaled adoption to thousands of customers nationwide",
+      "Acted as software lead across design collaboration, technical constraints, architecture, and deployment",
     ],
     tech: ["Node.js", "React", "TypeScript"],
     category: ExperienceCategory.Software_Engineer,
@@ -73,12 +76,20 @@ export const experiences = [
     role: "Data Engineering Consultant",
     date: "May 2019 - October 2019",
     description: [
-      "Built a BigQuery data warehouse and marts on GCP",
-      "Created SQL dashboards for business metrics",
-      "Analyzed data with Segment.js library",
-      "Informed product decisions with data insights",
+      "Architected GCP BigQuery warehouse and data marts for millions of rows",
+      "Automated scheduled pipelines from AWS, Segment, Firebase, Sheets, and Postgres (Python Spark, Node.js)",
+      "Built SQL dashboards used daily across departments",
+      "Implemented Segment.js instrumentation for product analytics",
     ],
-    tech: ["GCP", "BigQuery", "SQL", "Segment.js"],
+    tech: [
+      "GCP",
+      "BigQuery",
+      "SQL",
+      "Python",
+      "Spark",
+      "Node.js",
+      "Segment.js",
+    ],
     category: ExperienceCategory.Data_Engineer,
   },
   {
@@ -86,8 +97,9 @@ export const experiences = [
     role: "Computer Vision Intern",
     date: "May 2018 - August 2018",
     description: [
-      "Wrote a low-latency C++ camera API that raised frame rate from under 100 fps to 2000 fps",
-      "Used in a point-and-track laser system for ground-to-satellite communication",
+      "Built a low-latency C++ camera API via registers, firmware, and hardware graphics abstraction",
+      "Raised camera frame rate from under 100 fps to 2000 fps",
+      "Supported point-and-track laser systems for ground-to-satellite communications",
     ],
     tech: ["C++", "Camera API", "Firmware", "Hardware Graphics"],
     category: ExperienceCategory.Software_Engineer,
@@ -97,8 +109,8 @@ export const experiences = [
     role: "Computer Programmer",
     date: "August 2017 - February 2019",
     description: [
-      "Streamlined inventory and payroll workflows and data",
-      "Cut operating time by 16 hours per week",
+      "Automated inventory and payroll workflows with Google Apps Script and FileMaker",
+      "Reduced operating workload by 16 hours per week",
     ],
     tech: ["Google Apps Script", "FileMaker", "Relational database"],
     category: ExperienceCategory.Software_Engineer,
@@ -107,8 +119,11 @@ export const experiences = [
     title: "Agency for Science and Technology Research",
     role: "Student Researcher",
     date: "June 2015 - February 2016",
-    description: ["Researched EEG trends during affective picture viewing"],
-    tech: ["MATLAB", "EEG", "Signal processing"],
+    description: [
+      "Analyzed EEG activity during affective picture viewing with MATLAB signal processing",
+      "Computed frequency and power trends (e.g. FFT) and trained models to classify images",
+    ],
+    tech: ["MATLAB", "EEG", "Signal processing", "Statistics"],
     category: ExperienceCategory.Software_Engineer,
   },
   {
@@ -116,8 +131,8 @@ export const experiences = [
     role: "Teaching Assistant",
     date: "August 2018 - December 2018",
     description: [
-      "Led tutorials and guided class discussions",
-      "Produced teaching materials",
+      "Ran tutorials and class discussions on SICP functional programming",
+      "Produced teaching materials on higher-order functions, meta-circular evaluators, and streams",
       "Received the Best Tutor Award",
     ],
     tech: ["SICP", "Functional programming"],
@@ -495,9 +510,9 @@ export const games = [
     title: "Foof Game",
     description: "Adventure game",
     tech: ["Flash", "ActionScript"],
-    link: "/foof-game",
+    link: "/foof",
     category: GameCategory.Flash,
-    slug: "foof-game",
+    slug: "foof",
     image: "/game-images/foof.png",
   },
   {

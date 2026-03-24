@@ -69,14 +69,19 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     <section
       className={`${poppins.className} starfield w-full text-black bg-gradient-to-br from-emerald-800 to-slate-900 flex flex-col space-y-10`}
     >
-      <div className='bg-white/80 mx-6 lg:mx-48 pb-28'>
+      <div className='bg-white/80 mx-6 lg:mx-48 my-10 pb-28'>
         <div className='mx-6 lg:mx-16 py-10'>
           <Breadcrumb
             items={[
               { label: "Home", href: "/" },
-              { label: "Designs", href: "/design" },
+              { label: "Designs", href: "/designs" },
               ...(category
-                ? [{ label: category, href: `/design?category=${category}` }]
+                ? [
+                    {
+                      label: category,
+                      href: `/designs?category=${category}`,
+                    },
+                  ]
                 : []),
               { label: design?.title || "Design" },
             ]}

@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { navbarItems, siteConfig } from "../lib/navbar-data";
+import { usePathname } from "next/navigation";
+import { isActiveNavPath, navbarItems, siteConfig } from "../lib/navbar-data";
 
 export default function MobileNavbar() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Prevent body scroll when menu is open
@@ -108,23 +110,29 @@ export default function MobileNavbar() {
             {/* Navigation Items */}
             <div className='pt-20 p-6'>
               <nav className='space-y-2'>
-                {navbarItems.map((item, index) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`semibold block text-center rounded-lg text-lg font-medium transition-all duration-300 transform hover:scale-105 hover:bg-gray-50 hover:text-gray-900 ${
-                      isMenuOpen
-                        ? "opacity-100 translate-x-0"
-                        : "opacity-0 translate-x-4"
-                    }`}
-                    style={{
-                      transitionDelay: `${index * 100}ms`,
-                    }}
-                    onClick={closeMenu}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
+                {navbarItems.map((item, index) => {
+                  const active = isActiveNavPath(pathname, item.href);
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`block text-center rounded-lg text-lg transition-all duration-300 transform hover:scale-105 hover:bg-gray-50 hover:text-gray-900 ${
+                        active ? "font-bold" : "font-medium"
+                      } ${
+                        isMenuOpen
+                          ? "opacity-100 translate-x-0"
+                          : "opacity-0 translate-x-4"
+                      }`}
+                      style={{
+                        transitionDelay: `${index * 100}ms`,
+                      }}
+                      aria-current={active ? "page" : undefined}
+                      onClick={closeMenu}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
               </nav>
             </div>
 
