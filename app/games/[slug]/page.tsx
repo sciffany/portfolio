@@ -158,13 +158,15 @@ export default function GamePage({ params }: { params: { slug: string } }) {
             ) : null}
           </div>
         </div>
-        <div className="flex justify-center my-10">
-          <a href={game?.link} target="_blank" rel="noopener noreferrer">
-            <button className="bg-gradient-to-r from-emerald-950 font-semibold to-gray-900 text-white px-4 py-2 rounded-md">
-              Go to game
-            </button>
-          </a>
-        </div>
+        {game?.link?.trim() ? (
+          <div className="flex justify-center my-10">
+            <a href={game.link} target="_blank" rel="noopener noreferrer">
+              <button className="bg-gradient-to-r from-emerald-950 font-semibold to-gray-900 text-white px-4 py-2 rounded-md">
+                Go to game
+              </button>
+            </a>
+          </div>
+        ) : null}
       </div>
     </section>
   );

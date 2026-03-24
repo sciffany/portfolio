@@ -133,15 +133,18 @@ export default function GamesClient({
                     >
                       Learn more
                     </button>
-                    <button
-                      className="cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(game.link, "_blank");
-                      }}
-                    >
-                      Go to project
-                    </button>
+                    {game.link?.trim() ? (
+                      <button
+                        type="button"
+                        className="cursor-pointer text-lg font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 text-white px-4 py-2 rounded-md"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(game.link, "_blank");
+                        }}
+                      >
+                        Go to project
+                      </button>
+                    ) : null}
                   </div>
                 </div>
               </article>

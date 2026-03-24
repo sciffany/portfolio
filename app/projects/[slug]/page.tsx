@@ -108,13 +108,19 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </p>
           </div>
         </div>
-        <div className='flex justify-center my-10'>
-          <a href={project?.link} target='_blank' rel='noopener noreferrer'>
-            <button className='bg-gradient-to-r from-emerald-950 font-semibold to-gray-900 text-white px-4 py-2 rounded-md'>
-              Go to project
-            </button>
-          </a>
-        </div>
+        {project?.link?.trim() ? (
+          <div className='flex justify-center my-10'>
+            <a
+              href={project.link}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <button className='bg-gradient-to-r from-emerald-950 font-semibold to-gray-900 text-white px-4 py-2 rounded-md'>
+                Go to project
+              </button>
+            </a>
+          </div>
+        ) : null}
       </div>
     </section>
   );
