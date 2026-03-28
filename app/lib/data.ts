@@ -159,7 +159,7 @@ export const DESIGN_CATEGORIES: readonly DesignCategory[] = [
 export enum KeyProjectId {
   TakeApp = "take-app",
   StaffAnyWebTimeclock = "staffany-web-timeclock",
-  Lingosaurus = "lingosaurus",
+  RentBills = "rent-bills",
   NeatQuiz = "neatquiz",
 }
 
@@ -179,12 +179,12 @@ export const keyProjects = [
     emoji: "⏰",
   },
   {
-    id: KeyProjectId.Lingosaurus,
-    title: "Lingosaurus",
-    subtitle: "Learn Tagalog and Korean",
-    href: "https://lingosaurus.vercel.app/",
-    emoji: "🦕",
-    image: "/lingosaurus.png",
+    id: KeyProjectId.RentBills,
+    title: "Rent Bills",
+    subtitle: "Rent management app",
+    href: "https://github.com/sciffany/rent-bills",
+    emoji: "🏠",
+    image: "/rent-bills.png",
   },
   {
     id: KeyProjectId.NeatQuiz,
