@@ -1,7 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { experiences, ExperienceCategory } from "../lib/data";
+import { useEffect, useState } from "react";
+import {
+  experiences,
+  ExperienceAnchorId,
+  ExperienceCategory,
+} from "../lib/data";
 
 const EXPERIENCE_CATEGORIES: readonly ExperienceCategory[] = [
   ExperienceCategory.Software_Engineer,
@@ -20,6 +24,40 @@ export default function ExperienceContent() {
       : experiences.filter(
           (experience) => experience.category === selectedCategory
         );
+
+  useEffect(() => {
+    const syncCategoryFromHash = () => {
+      const raw = window.location.hash.slice(1);
+      if (!raw) return;
+      const isKnown = Object.values(ExperienceAnchorId).includes(
+        raw as ExperienceAnchorId
+      );
+      if (!isKnown) return;
+      const match = experiences.find((e) => e.anchorId === raw);
+      if (match) {
+        setSelectedCategory("All");
+      }
+    };
+    syncCategoryFromHash();
+    window.addEventListener("hashchange", syncCategoryFromHash);
+    return () =>
+      window.removeEventListener("hashchange", syncCategoryFromHash);
+  }, []);
+
+  useEffect(() => {
+    const scrollToHash = () => {
+      const raw = window.location.hash.slice(1);
+      if (!raw) return;
+      const el = document.getElementById(raw);
+      if (!el) return;
+      requestAnimationFrame(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    };
+    scrollToHash();
+    window.addEventListener("hashchange", scrollToHash);
+    return () => window.removeEventListener("hashchange", scrollToHash);
+  }, [filteredExperiences]);
 
   return (
     <div className="bg-white/80 mx-6 lg:mx-48 my-10">
@@ -66,7 +104,10 @@ export default function ExperienceContent() {
           {filteredExperiences.map((experience) => (
             <article
               key={`${experience.title}-${experience.date}`}
-              className="bg-white rounded-lg w-full flex flex-col lg:flex-row overflow-hidden transition"
+              id={experience.anchorId}
+              className={`bg-white rounded-lg w-full flex flex-col lg:flex-row overflow-hidden transition ${
+                experience.anchorId ? "scroll-mt-24" : ""
+              }`}
             >
               <div className="lg:w-1/3 text-xl font-semibold bg-gradient-to-r from-emerald-950 to-gray-900 p-4 text-white">
                 <div className="text-md">

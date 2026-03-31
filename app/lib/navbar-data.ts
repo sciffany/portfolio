@@ -51,6 +51,13 @@ export const navbarItems: NavItem[] = [
   },
 ];
 
+/** Same destinations as the main header nav: Experience, Projects, Games, Designs. */
+export const sectionNavItems: NavItem[] = navbarItems.filter(
+  (item) =>
+    item.type !== NavItemType.Download &&
+    ["Experience", "Projects", "Games", "Designs"].includes(item.label),
+);
+
 export const siteConfig = {
   name: "Tiffany Sia Chong",
   logo: "/logo_white.png",

@@ -1,6 +1,6 @@
 export const description = `
 - I love making [apps](/projects), [artworks](/designs) and people smile
-- Pescatarian, [cruciverbalist](https://crosshare.org/crosswords/vfN5qIXXAUb6rluYdGPH/break-a-leg) and [ornithophile](https://www.youtube.com/shorts/u-1EousPvG8)
+- Pescatarian, [cruciverbalist](https://crosshare.org/crosswords/vfN5qIXXAUb6rluYdGPH/break-a-leg) and ornithophile
 - Excited to work on [impactful projects](#key-projects-heading) and go the extra mile
 - Get in touch at [hello@sciffany.com](mailto:hello@sciffany.com)
 `;
@@ -11,8 +11,15 @@ export enum ExperienceCategory {
   Teaching_Assistant = "Teaching Assistant",
 }
 
+/** Deep-link targets on /experience for anchor scrolling */
+export enum ExperienceAnchorId {
+  TakeApp = "take-app",
+  StaffAnyWebTimeclock = "staffany-web-timeclock",
+}
+
 export const experiences = [
   {
+    anchorId: ExperienceAnchorId.TakeApp,
     title: "Take App",
     role: "Software Engineer",
     date: "May 2023 - Present",
@@ -60,6 +67,7 @@ export const experiences = [
     category: ExperienceCategory.Software_Engineer,
   },
   {
+    anchorId: ExperienceAnchorId.StaffAnyWebTimeclock,
     title: "StaffAny Pte Ltd",
     role: "Fullstack Software Engineer",
     date: "November 2019 - January 2020",
@@ -168,14 +176,14 @@ export const keyProjects = [
     id: KeyProjectId.TakeApp,
     title: "Take App",
     subtitle: "Software Engineer",
-    href: "https://take.app/",
+    href: `/experience#${ExperienceAnchorId.TakeApp}`,
     emoji: "🛍️",
   },
   {
     id: KeyProjectId.StaffAnyWebTimeclock,
     title: "StaffAny",
     subtitle: "Web Timeclock",
-    href: "https://www.staffany.com/",
+    href: `/experience#${ExperienceAnchorId.StaffAnyWebTimeclock}`,
     emoji: "⏰",
   },
   {
