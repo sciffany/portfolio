@@ -175,14 +175,14 @@ export const keyProjects = [
   {
     id: KeyProjectId.TakeApp,
     title: "Take App",
-    subtitle: "Software Engineer",
+    subtitle: "E-commerce builder",
     href: `/experience#${ExperienceAnchorId.TakeApp}`,
     emoji: "🛍️",
   },
   {
     id: KeyProjectId.StaffAnyWebTimeclock,
     title: "StaffAny",
-    subtitle: "Web Timeclock",
+    subtitle: "Attendance tracking system",
     href: `/experience#${ExperienceAnchorId.StaffAnyWebTimeclock}`,
     emoji: "⏰",
   },

@@ -7,22 +7,29 @@ import { description, keyProjects } from "./lib/data";
 import { sectionNavItems } from "./lib/navbar-data";
 import ReactMarkdown from "react-markdown";
 
-const sectionCardByHref: Record<string, { emoji: string; subtitle: string }> = {
+const sectionCardByHref: Record<
+  string,
+  { subtitle: string; image: string; imageAlt: string }
+> = {
   "/experience": {
-    emoji: "💼",
     subtitle: "Work, internships & teaching",
+    image: "/work.jpg",
+    imageAlt: "Work and professional experience",
   },
   "/projects": {
-    emoji: "🛠️",
     subtitle: "Apps, tools & coursework",
+    image: "/eeg.png",
+    imageAlt: "Brain research project",
   },
   "/games": {
-    emoji: "🎮",
     subtitle: "Playable browser games",
+    image: "/game-images/foof.png",
+    imageAlt: "Foof game",
   },
   "/designs": {
-    emoji: "🎨",
     subtitle: "Posters, branding & visuals",
+    image: "/wp-media/2019/02/version2_updated.png",
+    imageAlt: "TranSCENTdence concert design",
   },
 };
 
@@ -111,7 +118,53 @@ export default function Home() {
             id="key-projects-heading"
             className="text-slate-900 scroll-mt-24 text-2xl lg:text-3xl font-bold text-center mb-10 lg:mb-12"
           >
-            Key projects
+            Explore my work
+          </h2>
+
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 list-none p-0 m-0">
+            {sectionNavItems.map((item) => {
+              const meta = sectionCardByHref[item.href];
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="group flex flex-col h-full bg-white rounded-xl overflow-hidden shadow-lg transition hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
+                  >
+                    <div className="relative h-36 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center shrink-0">
+                      <Image
+                        src={meta.image}
+                        alt={meta.imageAlt}
+                        width={400}
+                        height={200}
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex flex-col flex-1 text-center bg-gradient-to-r from-emerald-950 to-gray-900 text-white p-4 gap-1">
+                      <span className="text-lg font-semibold group-hover:underline underline-offset-2">
+                        {item.label}
+                      </span>
+                      <span className="text-sm text-emerald-400/95">
+                        {meta.subtitle}
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      <section
+        className="starfield w-full py-16 lg:py-20 text-white bg-gradient-to-b from-emerald-950 to-slate-900"
+        aria-labelledby="explore-heading"
+      >
+        <div className="mx-6 lg:mx-auto lg:max-w-6xl">
+          <h2
+            id="explore-heading"
+            className="scroll-mt-24 text-2xl lg:text-3xl font-bold text-center mb-10 lg:mb-12"
+          >
+            Key Projects
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 list-none p-0 m-0">
             {keyProjects.map((project) => (
@@ -152,47 +205,6 @@ export default function Home() {
                 </a>
               </li>
             ))}
-          </ul>
-        </div>
-      </section>
-
-      <section
-        className="starfield w-full py-16 lg:py-20 text-white bg-gradient-to-b from-emerald-950 to-slate-900"
-        aria-labelledby="explore-heading"
-      >
-        <div className="mx-6 lg:mx-auto lg:max-w-6xl">
-          <h2
-            id="explore-heading"
-            className="scroll-mt-24 text-2xl lg:text-3xl font-bold text-center mb-10 lg:mb-12"
-          >
-            Explore
-          </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 list-none p-0 m-0">
-            {sectionNavItems.map((item) => {
-              const meta = sectionCardByHref[item.href];
-              return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="group flex flex-col h-full bg-white rounded-xl overflow-hidden shadow-lg transition hover:shadow-xl hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
-                  >
-                    {/* <div className="relative h-36 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center shrink-0">
-                      <span className="text-5xl relative z-[1]" aria-hidden>
-                        {meta.emoji}
-                      </span>
-                    </div> */}
-                    <div className="flex flex-col flex-1 items-center justify-center text-center min-h-36 bg-gradient-to-r from-emerald-950 to-gray-900 text-white p-4 gap-1">
-                      <span className="text-lg font-semibold group-hover:underline underline-offset-2">
-                        {item.label}
-                      </span>
-                      <span className="text-sm text-emerald-400/95">
-                        {meta.subtitle}
-                      </span>
-                    </div>
-                  </Link>
-                </li>
-              );
-            })}
           </ul>
         </div>
       </section>

@@ -147,7 +147,7 @@
   }
 }
 
-/* Key projects: mountain photo background (replaces starfield overlay) */
+/* Key projects: light blue gradient background */
 .key-projects-bg {
   position: relative;
   overflow: hidden;
@@ -157,25 +157,38 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/mountain.jpg");
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(
+    160deg,
+    #8cb0ee 0%,
+    #b8ddf2 35%,
+    #c5e3f5 70%,
+    #5092b9 100%
+  );
   z-index: 0;
-}
-
-.key-projects-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  /* background: linear-gradient(
-    to bottom right,
-    rgba(6, 78, 59, 0.88),
-    rgba(15, 23, 42, 0.82)
-  ); */
-  z-index: 1;
 }
 
 .key-projects-bg > :not(.fixed) {
   position: relative;
   z-index: 2;
+}
+
+/* Same starfield pattern as .starfield::before, dark blue (#1e3a8a) stars on light gradient */
+.key-projects-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjQwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMCwzMCkgc2NhbGUoMC4wNzUpIHRyYW5zbGF0ZSgtNTAsLTUwKSI+PHBhdGggZmlsbD0iIzFlM2E4YSIgZmlsbC1vcGFjaXR5PSIwLjkiIGQ9Ik01MCA1IEw2MSAzOCBMOTggMzggTDY4IDU5IEw3OSA5NSBMNTAgNzMgTDIxIDk1IEwzMiA1OSBMMiAzOCBMMzkgMzggWiIvPjwvZz48L3N2Zz4=")
+      0 0/240px 240px repeat,
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzAwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMDAsMTUwKSBzY2FsZSgwLjA1NikgdHJhbnNsYXRlKC01MCwtNTApIj48cGF0aCBmaWxsPSIjMWUzYThhIiBmaWxsLW9wYWNpdHk9IjAuODUiIGQ9Ik01MCA1IEw2MSAzOCBMOTggMzggTDY4IDU5IEw3OSA5NSBMNTAgNzMgTDIxIDk1IEwzMiA1OSBMMiAzOCBMMzkgMzggWiIvPjwvZz48L3N2Zz4=")
+      0 0/300px 300px repeat,
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMjAgMjIwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzAsODApIHNjYWxlKDAuMDQpIHRyYW5zbGF0ZSgtNTAsLTUwKSI+PHBhdGggZmlsbD0iIzFlM2E4YSIgZmlsbC1vcGFjaXR5PSIwLjc1IiBkPSJNNTAgNSBMNjEgMzggTDk4IDM4IEw2OCA1OSBMNzkgOTUgTDUwIDczIEwyMSA5NSBMMzIgNTkgTDIgMzggTDM5IDM4IFoiLz48L2c+PC9zdmc+")
+      0 0/220px 220px repeat,
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyODAgMjgwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MCwxMjApIHNjYWxlKDAuMDQpIHRyYW5zbGF0ZSgtNTAsLTUwKSI+PHBhdGggZmlsbD0iIzFlM2E4YSIgZmlsbC1vcGFjaXR5PSIwLjY1IiBkPSJNNTAgNSBMNjEgMzggTDk4IDM4IEw2OCA1OSBMNzkgOTUgTDUwIDczIEwyMSA5NSBMMzIgNTkgTDIgMzggTDM5IDM4IFoiLz48L2c+PC9zdmc+")
+      0 0/280px 280px repeat,
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNTAgMzUwIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNjAsNDApIHNjYWxlKDAuMTEpIHRyYW5zbGF0ZSgtNTAsLTUwKSI+PHBhdGggZmlsbD0iIzFlM2E4YSIgZmlsbC1vcGFjaXR5PSIwLjUiIGQ9Ik01MCA1IEw2MSAzOCBMOTggMzggTDY4IDU5IEw3OSA5NSBMNTAgNzMgTDIxIDk1IEwzMiA1OSBMMiAzOCBMMzkgMzggWiIvPjwvZz48L3N2Zz4=")
+      0 0/350px 350px repeat;
+  animation: twinkle 8s ease-in-out infinite;
+  opacity: 0.6;
 }
