@@ -25,12 +25,23 @@ export const experiences = [
     date: "May 2023 - Present",
     link: "https://take.app/",
     description: [
-      "Built core e-commerce features end-to-end",
-      "Integrated multiple payment methods",
-      "Implemented delivery and scheduling features",
-      "Optimized data transfer across services",
+      "Architected extensible payment system supporting 50+ payment methods and 3,000+ daily transactions",
+      "Delivered a scalable map-based delivery feature for 20,000+ stores from system design through production",
+      "Shipped a product subscription system with 1,000+ recurring transactions and built a booking and appointment system with 5,000+ transactions; led data modelling and collaborated with designers on the user experience",
+      "Cut server hosting costs by $400/month by fixing resource inefficiencies",
+      "Taught a fellow developer and pair programmed with them on data structures and engineering best practices",
     ],
     tech: ["Next.js", "TypeScript"],
+    category: ExperienceCategory.Software_Engineer,
+  },
+  {
+    title: "Pharmalife Pte Ltd",
+    role: "Software Engineer",
+    date: "May 2022 - April 2023",
+    description: [
+      "Led team of four junior developers to build healthcare mobile app to deliver medicines in Pakistan",
+    ],
+    tech: ["React Native", "TypeScript"],
     category: ExperienceCategory.Software_Engineer,
   },
   {
@@ -38,7 +49,7 @@ export const experiences = [
     role: "Web Engineer, Reliability Engineering Team",
     date: "July 2020 - August 2020",
     description: [
-      "Built backend and frontend for web tools used by Apple's reliability engineering team",
+      "Built backend and frontend for web tools in Ember.js used by Apple's reliability engineering team",
     ],
     tech: ["Ember.js", "Ruby on Rails", "PostgreSQL"],
     link: "https://www.apple.com/",
@@ -74,7 +85,7 @@ export const experiences = [
     description: [
       "Delivered Web Timeclock (Node.js, React, TypeScript) from prototype through testing to production",
       "Scaled adoption to thousands of customers nationwide",
-      "Acted as software lead across design collaboration, technical constraints, architecture, and deployment",
+      "Oversaw development as software lead across design collaboration, technical constraints, architecture, and deployment",
     ],
     tech: ["Node.js", "React", "TypeScript"],
     category: ExperienceCategory.Software_Engineer,
@@ -107,7 +118,7 @@ export const experiences = [
     description: [
       "Built a low-latency C++ camera API via registers, firmware, and hardware graphics abstraction",
       "Raised camera frame rate from under 100 fps to 2000 fps",
-      "Supported point-and-track laser systems for ground-to-satellite communications",
+      "My camera API is used in point-and-track laser systems for ground-to-satellite communications",
     ],
     tech: ["C++", "Camera API", "Firmware", "Hardware Graphics"],
     category: ExperienceCategory.Software_Engineer,
