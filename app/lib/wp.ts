@@ -2412,7 +2412,7 @@ export const wp = {
           ],
         },
         {
-          title: "Modern Family (Kind Of)",
+          title: "Sitcom Characters",
           link: "https://sciffany.wordpress.com/portfolio/modern-family-kind-of/",
           pubDate: "Wed, 21 Jun 2023 14:42:02 +0000",
           "dc:creator": "sciffany",
@@ -2425,7 +2425,7 @@ export const wp = {
           },
           description: "",
           "content:encoded":
-            '<!-- wp:paragraph -->\n<p>One of my first few attempts at caricature.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {"id":817,"sizeSlug":"large","linkDestination":"none"} -->\n<figure class="wp-block-image size-large"><img src="https://sciffany.wordpress.com/wp-content/uploads/2023/06/caricature2.png?w=1024" alt="" class="wp-image-817" /></figure>\n<!-- /wp:image -->\n\n<!-- wp:paragraph -->\n<p></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {"id":819,"width":795,"height":397,"sizeSlug":"large","linkDestination":"none"} -->\n<figure class="wp-block-image size-large is-resized"><img src="https://sciffany.wordpress.com/wp-content/uploads/2023/06/image.png?w=1024" alt="" class="wp-image-819" width="795" height="397" /></figure>\n<!-- /wp:image -->',
+            '<!-- wp:paragraph -->\n<p>Modern Family caricature</p>\n<img src="https://sciffany.wordpress.com/wp-content/uploads/2023/06/caricature2.png" alt="" class="wp-image-817" width="1024"/></figure>\n<!-- /wp:image -->\n\n<!-- wp:paragraph -->\n<p></p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {"id":819,"width":795,"height":397,"sizeSlug":"large","linkDestination":"none"} -->\n</figure>\n<!-- /wp:image --> Friends sketch <img src="/wp-media/friends.jpg" alt="Friends" width="1024" />',
           "excerpt:encoded": "",
           "wp:post_id": 816,
           "wp:post_date": "2023-06-21 14:42:02",
