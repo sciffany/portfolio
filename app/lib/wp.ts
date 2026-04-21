@@ -2180,7 +2180,7 @@ export const wp = {
           ],
         },
         {
-          title: "Giraffe sticker",
+          title: "Stuffed animal stickers",
           link: "https://sciffany.wordpress.com/portfolio/giraffe-sticker/",
           pubDate: "Tue, 27 Sep 2022 03:41:27 +0000",
           "dc:creator": "sciffany",
@@ -2193,7 +2193,7 @@ export const wp = {
           },
           description: "",
           "content:encoded":
-            '<!-- wp:paragraph -->\n<p>A Giraffe Stuffed Animal Sticker</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {"id":787,"width":433,"height":433,"sizeSlug":"large","linkDestination":"none"} -->\n<figure class="wp-block-image size-large is-resized"><img src="https://sciffany.wordpress.com/wp-content/uploads/2022/09/giraffe_black-background-1.png?w=1024" alt="" class="wp-image-787" width="433" height="433" /></figure>\n<!-- /wp:image -->',
+            '<!-- wp:paragraph -->\n<p>A Giraffe Stuffed Animal Sticker</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:image {"id":787,"width":433,"height":433,"sizeSlug":"large","linkDestination":"none"} -->\n<figure class="wp-block-image size-large is-resized"><img src="https://sciffany.wordpress.com/wp-content/uploads/2022/09/giraffe_black-background-1.png?w=1024" alt="" class="wp-image-787" width="433" height="433" /></figure>\n<!-- /wp:image --> And a blue jay sticker \n <img src="/wp-media/bluejay.jpeg" alt="Blue Jay" width="433" height="433" />',
           "excerpt:encoded": "",
           "wp:post_id": 785,
           "wp:post_date": "2022-09-27 03:41:27",

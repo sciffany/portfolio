@@ -28,7 +28,7 @@ export const experiences = [
       "Architected extensible payment system supporting 50+ payment methods and 3,000+ daily transactions",
       "Delivered a scalable map-based delivery feature for 20,000+ stores from system design through production",
       "Shipped a product subscription system with 1,000+ recurring transactions and built a booking and appointment system with 5,000+ transactions; led data modelling and collaborated with designers on the user experience",
-      "Cut server hosting costs by $400/month by fixing resource inefficiencies",
+      "Cut server hosting costs by $2000/month by fixing resource inefficiencies",
       "Taught a fellow developer and pair programmed with them on data structures and engineering best practices",
     ],
     tech: ["Next.js", "TypeScript"],
@@ -37,9 +37,9 @@ export const experiences = [
   {
     title: "Pharmalife Pte Ltd",
     role: "Software Engineer",
-    date: "May 2022 - April 2023",
+    date: "August 2022 - April 2023",
     description: [
-      "Led team of four junior developers to build healthcare mobile app to deliver medicines in Pakistan",
+      "Guided team of four junior developers to build healthcare mobile app to deliver medicines in Pakistan",
     ],
     tech: ["React Native", "TypeScript"],
     category: ExperienceCategory.Software_Engineer,
